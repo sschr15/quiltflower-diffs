@@ -1,6 +1,6 @@
-diff --color -ru 1.9.0/pkg/TestEnumSwitchEmpty.java 1.10.0-20221220.042610-29/pkg/TestEnumSwitchEmpty.java
---- 1.9.0/pkg/TestEnumSwitchEmpty.java	2022-12-31 16:11:41.220528700 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestEnumSwitchEmpty.java	2022-12-31 16:11:40.003680800 -0600
+gen_diffs.py pkg/TestEnumSwitchEmpty.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -4,9 +4,34 @@
  
  public class TestEnumSwitchEmpty {
@@ -41,9 +41,9 @@ diff --color -ru 1.9.0/pkg/TestEnumSwitchEmpty.java 1.10.0-20221220.042610-29/pk
     }
  }
 \ No newline at end of file
-diff --color -ru 1.9.0/pkg/TestFieldSingleAccess.java 1.10.0-20221220.042610-29/pkg/TestFieldSingleAccess.java
---- 1.9.0/pkg/TestFieldSingleAccess.java	2022-12-31 16:11:41.223526200 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestFieldSingleAccess.java	2022-12-31 16:11:40.006650000 -0600
+gen_diffs.py pkg/TestFieldSingleAccess.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -4,9 +4,8 @@
     public Integer field;
  
@@ -55,9 +55,9 @@ diff --color -ru 1.9.0/pkg/TestFieldSingleAccess.java 1.10.0-20221220.042610-29/
        }
     }
  
-diff --color -ru 1.9.0/pkg/TestFinallyThrow.java 1.10.0-20221220.042610-29/pkg/TestFinallyThrow.java
---- 1.9.0/pkg/TestFinallyThrow.java	2022-12-31 16:11:41.224525800 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestFinallyThrow.java	2022-12-31 16:11:40.008650600 -0600
+gen_diffs.py pkg/TestFinallyThrow.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -6,18 +6,14 @@
           try {
              System.out.println(1);
@@ -84,9 +84,9 @@ diff --color -ru 1.9.0/pkg/TestFinallyThrow.java 1.10.0-20221220.042610-29/pkg/T
              }
           }
        }
-diff --color -ru 1.9.0/pkg/TestGroovyClass.java 1.10.0-20221220.042610-29/pkg/TestGroovyClass.java
---- 1.9.0/pkg/TestGroovyClass.java	2022-12-31 16:11:41.240525900 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestGroovyClass.java	2022-12-31 16:11:40.025651500 -0600
+gen_diffs.py pkg/TestGroovyClass.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -37,9 +37,8 @@
     @Internal
     @Transient
@@ -120,9 +120,9 @@ diff --color -ru 1.9.0/pkg/TestGroovyClass.java 1.10.0-20221220.042610-29/pkg/Te
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
-diff --color -ru 1.9.0/pkg/TestGroovyTrait$Trait$Helper.java 1.10.0-20221220.042610-29/pkg/TestGroovyTrait$Trait$Helper.java
---- 1.9.0/pkg/TestGroovyTrait$Trait$Helper.java	2022-12-31 16:11:41.242528900 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestGroovyTrait$Trait$Helper.java	2022-12-31 16:11:40.026650500 -0600
+gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -38,9 +38,8 @@
     @Internal
     @Transient
@@ -134,9 +134,9 @@ diff --color -ru 1.9.0/pkg/TestGroovyTrait$Trait$Helper.java 1.10.0-20221220.042
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-diff --color -ru 1.9.0/pkg/TestGroovyTryCatch.java 1.10.0-20221220.042610-29/pkg/TestGroovyTryCatch.java
---- 1.9.0/pkg/TestGroovyTryCatch.java	2022-12-31 16:11:41.243526500 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestGroovyTryCatch.java	2022-12-31 16:11:40.028650900 -0600
+gen_diffs.py pkg/TestGroovyTryCatch.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -50,9 +50,8 @@
     @Internal
     @Transient
@@ -148,9 +148,9 @@ diff --color -ru 1.9.0/pkg/TestGroovyTryCatch.java 1.10.0-20221220.042610-29/pkg
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-diff --color -ru 1.9.0/pkg/TestMethodParamsNoLvt.java 1.10.0-20221220.042610-29/pkg/TestMethodParamsNoLvt.java
---- 1.9.0/pkg/TestMethodParamsNoLvt.java	2022-12-31 16:11:41.292526200 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestMethodParamsNoLvt.java	2022-12-31 16:11:40.096649700 -0600
+gen_diffs.py pkg/TestMethodParamsNoLvt.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -2,13 +2,13 @@
  
  public class TestMethodParamsNoLvt {
@@ -171,9 +171,9 @@ diff --color -ru 1.9.0/pkg/TestMethodParamsNoLvt.java 1.10.0-20221220.042610-29/
     }
  }
 \ No newline at end of file
-diff --color -ru 1.9.0/pkg/TestObjectPhi.java 1.10.0-20221220.042610-29/pkg/TestObjectPhi.java
---- 1.9.0/pkg/TestObjectPhi.java	2022-12-31 16:11:41.308527200 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestObjectPhi.java	2022-12-31 16:11:40.112649400 -0600
+gen_diffs.py pkg/TestObjectPhi.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -2,30 +2,13 @@
  
  public class TestObjectPhi {
@@ -214,9 +214,9 @@ diff --color -ru 1.9.0/pkg/TestObjectPhi.java 1.10.0-20221220.042610-29/pkg/Test
     }
  }
 \ No newline at end of file
-diff --color -ru 1.9.0/pkg/TestStaticIterator.java 1.10.0-20221220.042610-29/pkg/TestStaticIterator.java
---- 1.9.0/pkg/TestStaticIterator.java	2022-12-31 16:11:41.353527000 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestStaticIterator.java	2022-12-31 16:11:40.158649900 -0600
+gen_diffs.py pkg/TestStaticIterator.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -15,29 +15,11 @@
     }
  
@@ -252,9 +252,9 @@ diff --color -ru 1.9.0/pkg/TestStaticIterator.java 1.10.0-20221220.042610-29/pkg
     }
  
     public static void test1() {
-diff --color -ru 1.9.0/pkg/TestTryReturn.java 1.10.0-20221220.042610-29/pkg/TestTryReturn.java
---- 1.9.0/pkg/TestTryReturn.java	2022-12-31 16:11:41.400536000 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestTryReturn.java	2022-12-31 16:11:40.206649700 -0600
+gen_diffs.py pkg/TestTryReturn.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -223,7 +223,7 @@
              return;
           } catch (Exception var16) {
@@ -264,9 +264,9 @@ diff --color -ru 1.9.0/pkg/TestTryReturn.java 1.10.0-20221220.042610-29/pkg/Test
           }
        } finally {
           System.out.println(var3);
-diff --color -ru 1.9.0/pkg/TestTryWithResourcesAfterSwitch.java 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesAfterSwitch.java
---- 1.9.0/pkg/TestTryWithResourcesAfterSwitch.java	2022-12-31 16:11:41.404097800 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesAfterSwitch.java	2022-12-31 16:11:40.209649800 -0600
+gen_diffs.py pkg/TestTryWithResourcesAfterSwitch.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -25,97 +25,20 @@
     }
  
@@ -381,9 +381,9 @@ diff --color -ru 1.9.0/pkg/TestTryWithResourcesAfterSwitch.java 1.10.0-20221220.
     }
  }
 \ No newline at end of file
-diff --color -ru 1.9.0/pkg/TestTryWithResourcesFakeTrigger.java 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesFakeTrigger.java
---- 1.9.0/pkg/TestTryWithResourcesFakeTrigger.java	2022-12-31 16:11:41.406111400 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesFakeTrigger.java	2022-12-31 16:11:40.211650200 -0600
+gen_diffs.py pkg/TestTryWithResourcesFakeTrigger.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -2,6 +2,7 @@
  
  import java.io.File;
@@ -430,9 +430,9 @@ diff --color -ru 1.9.0/pkg/TestTryWithResourcesFakeTrigger.java 1.10.0-20221220.
     }
  }
 \ No newline at end of file
-diff --color -ru 1.9.0/pkg/TestTryWithResourcesManyJ9.java 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesManyJ9.java
---- 1.9.0/pkg/TestTryWithResourcesManyJ9.java	2022-12-31 16:11:41.408096600 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestTryWithResourcesManyJ9.java	2022-12-31 16:11:40.214649900 -0600
+gen_diffs.py pkg/TestTryWithResourcesManyJ9.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -10,70 +10,54 @@
        Throwable var3 = null;
  
@@ -540,9 +540,9 @@ diff --color -ru 1.9.0/pkg/TestTryWithResourcesManyJ9.java 1.10.0-20221220.04261
        } finally {
           $closeResource(var3, s1);
        }
-diff --color -ru 1.9.0/pkg/TestUnknownCast.java 1.10.0-20221220.042610-29/pkg/TestUnknownCast.java
---- 1.9.0/pkg/TestUnknownCast.java	2022-12-31 16:11:41.415097300 -0600
-+++ 1.10.0-20221220.042610-29/pkg/TestUnknownCast.java	2022-12-31 16:11:40.220650100 -0600
+gen_diffs.py pkg/TestUnknownCast.java 1.9.0 1.10.0-20221220.042610-29
+--- 1.9.0
++++ 1.10.0-20221220.042610-29
 @@ -1,8 +1,6 @@
  package pkg;
  

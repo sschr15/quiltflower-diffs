@@ -2,6 +2,16 @@ from __future__ import annotations
 from glob import glob
 from os import path
 from re import compile
+from typing import Callable
+
+try:
+    from natsort import natsorted
+    sort = natsorted
+except ImportError:
+    print('natsort not found, falling back to sorted')
+    sort = sorted
+
+sort: Callable[[list[str]], list[str]]  # Type hint to guarantee to type checking tools that sort is callable
 
 def find_notes() -> list[str]:
     fs = path.sep
@@ -18,10 +28,16 @@ def find_methods_for_notes(file: str) -> dict[str, list[str]]:
     methods: dict[str, list[str]] = {}
     stray_notes: list[str] = []
     current_method: str = ''
+    method_indent: int = 0
     with open(file, 'r') as f:
         contents = f.readlines()
 
     for line in contents:
+        if (' ' * method_indent + '}') == line.rstrip():
+            # we've reached the end of the method, future notes are stray
+            current_method = ''
+            method_indent = 0
+
         if '// $FF: ' in line or '// $QF: ' in line:
             note = line.split('// $FF: ')[-1].split('// $QF: ')[-1].strip()
             if current_method:
@@ -30,6 +46,7 @@ def find_methods_for_notes(file: str) -> dict[str, list[str]]:
                 stray_notes.append(note)
         elif generous_method_matcher.search(line):
             method = generous_method_matcher.search(line)['name']
+            method_indent = len(line) - len(line.lstrip())
             if len(stray_notes) > 0:
                 methods[method] = stray_notes
                 stray_notes = []
@@ -41,7 +58,7 @@ def find_methods_for_notes(file: str) -> dict[str, list[str]]:
 
 def main():
     files_with_notes = find_notes()
-    for file in files_with_notes:
+    for file in sort(files_with_notes):
         methods = find_methods_for_notes(file)
         for method, notes in methods.items():
             if notes:
