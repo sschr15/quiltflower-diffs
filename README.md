@@ -34,3 +34,32 @@ to improve overall diff quality:
 - Decompile Generic Signatures (true) - makes Quiltflower decompile generic signatures (which it does not by default on older versions)
 - Remove Synthetic Methods (false) - prevents Quiltflower from removing synthetic methods (which it does by default on more recent versions)
 - Log Level (WARN) - Decreases verbosity of the logs in `logs/`
+
+## Why are there no diffs against older Quiltflower versions?
+
+Many older versions have issues that prevent them from not failing too hard against the test cases. 1.4 and 1.5 both have this issue -
+specifically not knowing how to decompile invokedynamic items from constant pools. 1.3 and earlier either don't exist as Quiltflower
+releases or have been lost to the sands of time. 1.6 is special...
+
+## Why is there no diff against Quiltflower 1.6?
+
+Quiltflower 1.6 is an interesting beast. It's new enough that it can at least not fail catastrophically against the test cases, but
+it's old enough that it has another hard issue that plagues most versions before 1.7. It comes across "1.6.0" as the "output location"
+when running via these scripts, but it interprets any output location as a jarfile. This *sounds* like it shouldn't cause any issues,
+but pre-1.7, Quiltflower (as well as its parents ForgeFlower and Fernflower) add erroneous empty files to the output jarfile
+(when running the console decompiler). These files just "happen" to have the same names as directories in the file, so upon an attempt
+to extract the jarfile, conflicts arise.
+
+This issue is fixed in future versions.
+
+## Why is the latest snapshot version always re-downloaded?
+
+To ensure that we're for sure using the latest snapshot version, we always re-download it. This is because the way that a version is picked
+in the script does not include information about what exact snapshot it is, just that it is a snapshot. It also (in the find-what-is-new part)
+does not search the file tree to identify whatever snapshot has already been downloaded.
+
+## Why should I have `natsort` installed?
+
+`natsort` is a Python library that allows for natural sorting of strings. This is useful in this scenario, because according to traditional
+alphanumeric sorting, `1.9.0` comes after `1.10.0`. However, this is not the case for Quiltflower versions (or any semantic versioning system,
+for that matter). `natsort` allows for "natural" (or "human") sorting, which also works quite well for semantic versioning.

@@ -6,6 +6,11 @@ import sys
 import subprocess
 import time
 
+try:
+    from natsort import natsorted as sort
+except ImportError:
+    sort = sorted
+
 def get_releases() -> list[str]:
     releases: list[str] = []
     xml = get('https://maven.quiltmc.org/repository/release/org/quiltmc/quiltflower/maven-metadata.xml').text
@@ -13,7 +18,7 @@ def get_releases() -> list[str]:
     versions = root.findall('versioning/versions/version')
     for version in versions:
         releases.append(version.text)
-    return releases
+    return sort(releases)
 
 def get_latest_snapshot() -> str:
     xml = get('https://maven.quiltmc.org/repository/snapshot/org/quiltmc/quiltflower/maven-metadata.xml').text
@@ -102,9 +107,10 @@ if __name__ == '__main__':
         except ImportError:
             print('qf_prefs.py not found, trying to generate via GenQfPreferences.java')
             # Ensure a QF jar is downloaded
-            download_version(get_releases()[-1])
+            version = get_releases()[-1]
+            download_version(version)
             os.system('javac GenQfPreferences.java')
-            os.system('java GenQfPreferences')
+            os.system(f'java GenQfPreferences {version}.jar')
             try:
                 from qf_prefs import IFernflowerPreferences
             except ImportError:

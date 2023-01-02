@@ -11,7 +11,7 @@ import java.lang.reflect.Modifier;
 public class GenQfPreferences {
     private static final String PREFS_CLASS = "org.jetbrains.java.decompiler.main.extern.IFernflowerPreferences";
 
-    public static void run() throws Throwable {
+    public static void run(String reportedJar) throws Throwable {
         Path outputPythonFile = Path.of("qf_prefs.py");
         List<String> outputLines = new ArrayList<>(List.of(
             "from __future__ import annotations",
@@ -62,18 +62,21 @@ public class GenQfPreferences {
             }
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
             // Attempt to load QF jar from relative path
-            Path jars = Path.of("jars");
-            List<Path> jarFiles;
-            try (var stream = Files.list(jars)) {
-                jarFiles = stream
-                    .filter(p -> p.getFileName().toString().endsWith(".jar"))
-                    .map(p -> p.getFileName().toString())
-                    .sorted(Comparator.naturalOrder())
-                    .map(jars::resolve)
-                    .toList();
+            if (reportedJar == null) {
+                Path jars = Path.of("jars");
+                List<Path> jarFiles;
+                try (var stream = Files.list(jars)) {
+                    jarFiles = stream
+                        .filter(p -> p.getFileName().toString().endsWith(".jar"))
+                        .map(p -> p.getFileName().toString())
+                        .sorted(Comparator.naturalOrder())
+                        .map(jars::resolve)
+                        .toList();
+                }
+                Path newestByVersion = jarFiles.get(jarFiles.size() - 1);
+                reportedJar = newestByVersion.getFileName().toString();
             }
-            Path newestByVersion = jarFiles.get(jarFiles.size() - 1);
-            System.err.println("WARNING: Could not find Quiltflower classes, attempting to load from " + newestByVersion);
+            System.err.println("WARNING: Could not find Quiltflower classes, attempting to load from " + reportedJar);
 
             if (!Files.exists(Path.of("GenQfPreferences.class"))) {
                 Process p = new ProcessBuilder("javac", "GenQfPreferences.java")
@@ -85,8 +88,9 @@ public class GenQfPreferences {
                 }
             }
 
+            String jar = Path.of("jars", reportedJar).toString();
             String cp = String.join(System.getProperty("path.separator"), List.of(
-                newestByVersion.toString(),
+                jar,
                 "."
             ));
 
@@ -108,7 +112,8 @@ public class GenQfPreferences {
 
     public static void main(String[] args) {
         try {
-            run();
+            String reportedJar = args.length > 0 ? args[0] : null;
+            run(reportedJar);
         } catch (Throwable t) {
             var rethrower = new Object() {
                 public <T extends Throwable> void rethrow(Throwable t) throws T {
