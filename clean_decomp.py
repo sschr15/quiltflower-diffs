@@ -44,11 +44,16 @@ def as_stacktrace_line(line: str) -> Optional[StacktraceLine]:
 
 def clean_decomp(decomp: str) -> str:
     """
-    Cleans the decompilation by removing line numbers from
-    stacktrace lines that are in comments.
+    Cleans the decompilation by removing various changing components.
+    This includes:
+    - Line numbers in comments' stacktrace lines
+    - `// $FF` becoming `// $QF` in more recent versions of Quiltflower
     """
     output = []
     for line in decomp.splitlines():
+        if ('// $FF:' in line):
+            line = line.replace('// $FF:', '// $QF:')
+
         if re.compile(r'^\s*//\s*(.+)').match(line):
             split_point = line.find('//') + 2
             stacktrace_line = as_stacktrace_line(line[split_point:].strip())

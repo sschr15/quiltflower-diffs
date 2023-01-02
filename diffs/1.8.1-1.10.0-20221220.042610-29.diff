@@ -1,15 +1,3 @@
-gen_diffs.py ext/Direction.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -8,7 +8,7 @@
-    UP,
-    DOWN;
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Direction[] $values() {
-       return new Direction[]{NORTH, SOUTH, EAST, WEST, UP, DOWN};
-    }
 gen_diffs.py pkg/Option3.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -349,18 +337,6 @@ gen_diffs.py pkg/TestAssertJ16.java 1.8.1 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestAssertMerge.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -1,7 +1,7 @@
- package pkg;
- 
- public class TestAssertMerge {
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    static final boolean $assertionsDisabled = !TestAssertMerge.class.desiredAssertionStatus();
- 
-    public void test(int i, int j) {
 gen_diffs.py pkg/TestAssertSwitchExpression.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -631,18 +607,6 @@ gen_diffs.py pkg/TestClassVar.java 1.8.1 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestComplexCondy.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -17,7 +17,7 @@
-    }
- 
-    public static VarHandle testPrimitiveVarHandle() {
--      // $FF: Couldn't be decompiled
-+      // $QF: Couldn't be decompiled
-       // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
-       // java.lang.NullPointerException: Cannot invoke "String.length()" because "signature" is null
-       //  at org.jetbrains.java.decompiler.struct.gen.VarType.<init>(VarType.java)
 gen_diffs.py pkg/TestComplexIfElseChain.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -752,24 +716,6 @@ gen_diffs.py pkg/TestCondy.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public static VarHandle testStaticVarHandle() {
-gen_diffs.py pkg/TestConstructorSwitchExpression3.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -14,12 +14,12 @@
-       return new Random().nextInt(3);
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static TestConstructorSwitchExpression3[] $values() {
-       return new TestConstructorSwitchExpression3[]{T1, T2};
-    }
- 
--   // $FF: Failed to inline enum fields
-+   // $QF: Failed to inline enum fields
-    // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
-    static {
-       T1 = new TestConstructorSwitchExpression3(switch(get()) {
 gen_diffs.py pkg/TestConstType.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -846,27 +792,6 @@ gen_diffs.py pkg/TestDefiniteAssignment.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     void testBooleanNormalness(int n) {
-gen_diffs.py pkg/TestDoubleBraceInitializersJ17.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -37,7 +37,7 @@
-          }
-       };
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static TestDoubleBraceInitializersJ17.TestEnum[] $values() {
-          return new TestDoubleBraceInitializersJ17.TestEnum[]{A, B};
-       }
-@@ -59,7 +59,7 @@
- 
-       public int field;
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static TestDoubleBraceInitializersJ17.TestEnum1[] $values() {
-          return new TestDoubleBraceInitializersJ17.TestEnum1[]{A, B};
-       }
 gen_diffs.py pkg/TestDoublePopAfterJump.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -1090,7 +1015,7 @@ gen_diffs.py pkg/TestFinallyBlockVariableUse.java 1.8.1 1.10.0-20221220.042610-2
  package pkg;
  
  public class TestFinallyBlockVariableUse {
--   // $FF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
+-   // $QF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
 -   // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
     public int test(String s, int i, int j) {
        System.out.println("a");
@@ -1447,60 +1372,6 @@ gen_diffs.py pkg/TestGenericSuper.java 1.8.1 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestGroovyClass.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -21,13 +21,13 @@
-    private final TestGroovyClass.Inner i;
-    private final Runnable r;
-    private final Callable<String> c;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static ClassInfo $staticClassInfo;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    public static transient boolean __$stMC;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private transient MetaClass metaClass;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static SoftReference $callSiteArray;
- 
-    @Generated
-@@ -46,7 +46,7 @@
-       this.metaClass = var6;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public Object this$dist$invoke$1(String name, Object args) {
-       CallSite[] var3 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.invokeMethodOnCurrentN(
-@@ -57,7 +57,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public void this$dist$set$1(String name, Object value) {
-       CallSite[] var3 = $getCallSiteArray();
-       ScriptBytecodeAdapter.setGroovyObjectProperty(
-@@ -65,7 +65,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public Object this$dist$get$1(String name) {
-       CallSite[] var2 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.getGroovyObjectProperty(
-@@ -73,7 +73,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    protected MetaClass $getStaticMetaClass() {
-       if (this.getClass() != TestGroovyClass.class) {
-          return ScriptBytecodeAdapter.initMetaClass(this);
 @@ -91,9 +91,8 @@
     @Internal
     @Transient
@@ -1512,105 +1383,6 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.1 1.10.0-20221220.042610-29
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-@@ -126,20 +125,20 @@
-       return this.c;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static void $createCallSiteArray_1(String[] var0) {
-       var0[0] = "<$constructor$>";
-       var0[1] = "<$constructor$>";
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSiteArray $createCallSiteArray() {
-       String[] var0 = new String[2];
-       $createCallSiteArray_1(var0);
-       return new CallSiteArray(TestGroovyClass.class, var0);
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSite[] $getCallSiteArray() {
-       CallSiteArray var0;
-       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
-@@ -151,13 +150,13 @@
-    }
- 
-    public class Inner implements GroovyObject {
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static ClassInfo $staticClassInfo;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static transient boolean __$stMC;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private transient MetaClass metaClass;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static SoftReference $callSiteArray;
- 
-       @Generated
-@@ -168,13 +167,13 @@
-          this.metaClass = var4;
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public Object methodMissing(String name, Object args) {
-          CallSite[] var3 = $getCallSiteArray();
-          return TestGroovyClass.this.this$dist$invoke$1(name, args);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static Object $static_methodMissing(String name, Object args) {
-          CallSite[] var2 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.invokeMethodN(
-@@ -185,13 +184,13 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public void propertyMissing(String name, Object value) {
-          CallSite[] var3 = $getCallSiteArray();
-          TestGroovyClass.this.this$dist$set$1(name, value);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static void $static_propertyMissing(String name, Object value) {
-          CallSite[] var2 = $getCallSiteArray();
-          ScriptBytecodeAdapter.setProperty(
-@@ -199,13 +198,13 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public Object propertyMissing(String name) {
-          CallSite[] var2 = $getCallSiteArray();
-          return TestGroovyClass.this.this$dist$get$1(name);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static Object $static_propertyMissing(String name) {
-          CallSite[] var1 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.getProperty(
-@@ -213,7 +212,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       protected MetaClass $getStaticMetaClass() {
-          if (this.getClass() != TestGroovyClass.Inner.class) {
-             return ScriptBytecodeAdapter.initMetaClass(this);
 @@ -231,9 +230,8 @@
        @Internal
        @Transient
@@ -1622,103 +1394,6 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.1 1.10.0-20221220.042610-29
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
-@@ -246,13 +244,13 @@
-          this.metaClass = var1;
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSiteArray $createCallSiteArray() {
-          String[] var0 = new String[0];
-          return new CallSiteArray(TestGroovyClass.Inner.class, var0);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSite[] $getCallSiteArray() {
-          CallSiteArray var0;
-          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
-@@ -265,13 +263,13 @@
-    }
- 
-    public static class Nested implements GroovyObject {
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static ClassInfo $staticClassInfo;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static transient boolean __$stMC;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private transient MetaClass metaClass;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static SoftReference $callSiteArray;
- 
-       @Generated
-@@ -282,7 +280,7 @@
-          this.metaClass = var2;
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public Object methodMissing(String name, Object args) {
-          CallSite[] var3 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.invokeMethodN(
-@@ -293,7 +291,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static Object $static_methodMissing(String name, Object args) {
-          CallSite[] var2 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.invokeMethodN(
-@@ -304,7 +302,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public void propertyMissing(String name, Object value) {
-          CallSite[] var3 = $getCallSiteArray();
-          ScriptBytecodeAdapter.setProperty(
-@@ -312,7 +310,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static void $static_propertyMissing(String name, Object value) {
-          CallSite[] var2 = $getCallSiteArray();
-          ScriptBytecodeAdapter.setProperty(
-@@ -320,7 +318,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public Object propertyMissing(String name) {
-          CallSite[] var2 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.getProperty(
-@@ -328,7 +326,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       public static Object $static_propertyMissing(String name) {
-          CallSite[] var1 = $getCallSiteArray();
-          return ScriptBytecodeAdapter.getProperty(
-@@ -336,7 +334,7 @@
-          );
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       protected MetaClass $getStaticMetaClass() {
-          if (this.getClass() != TestGroovyClass.Nested.class) {
-             return ScriptBytecodeAdapter.initMetaClass(this);
 @@ -354,9 +352,8 @@
        @Internal
        @Transient
@@ -1730,232 +1405,9 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.1 1.10.0-20221220.042610-29
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
-@@ -369,13 +366,13 @@
-          this.metaClass = var1;
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSiteArray $createCallSiteArray() {
-          String[] var0 = new String[0];
-          return new CallSiteArray(TestGroovyClass.Nested.class, var0);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSite[] $getCallSiteArray() {
-          CallSiteArray var0;
-          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
-@@ -388,11 +385,11 @@
-    }
- 
-    public final class _closure1 extends Closure implements GeneratedClosure {
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static ClassInfo $staticClassInfo;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static transient boolean __$stMC;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static SoftReference $callSiteArray;
- 
-       public _closure1(Object _outerInstance, Object _thisObject) {
-@@ -411,7 +408,7 @@
-          return this.doCall(null);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       protected MetaClass $getStaticMetaClass() {
-          if (this.getClass() != TestGroovyClass._closure1.class) {
-             return ScriptBytecodeAdapter.initMetaClass(this);
-@@ -425,19 +422,19 @@
-          }
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static void $createCallSiteArray_1(String[] var0) {
-          var0[0] = "println";
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSiteArray $createCallSiteArray() {
-          String[] var0 = new String[1];
-          $createCallSiteArray_1(var0);
-          return new CallSiteArray(TestGroovyClass._closure1.class, var0);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSite[] $getCallSiteArray() {
-          CallSiteArray var0;
-          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
-@@ -450,11 +447,11 @@
-    }
- 
-    public final class _closure2 extends Closure implements GeneratedClosure {
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static ClassInfo $staticClassInfo;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static transient boolean __$stMC;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       private static SoftReference $callSiteArray;
- 
-       public _closure2(Object _outerInstance, Object _thisObject) {
-@@ -473,7 +470,7 @@
-          return this.doCall(null);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       protected MetaClass $getStaticMetaClass() {
-          if (this.getClass() != TestGroovyClass._closure2.class) {
-             return ScriptBytecodeAdapter.initMetaClass(this);
-@@ -487,13 +484,13 @@
-          }
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSiteArray $createCallSiteArray() {
-          String[] var0 = new String[0];
-          return new CallSiteArray(TestGroovyClass._closure2.class, var0);
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static CallSite[] $getCallSiteArray() {
-          CallSiteArray var0;
-          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
-gen_diffs.py pkg/TestGroovyTrait$Trait$FieldHelper.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -1,10 +1,10 @@
- package pkg;
- 
--// $FF: synthetic class
-+// $QF: synthetic class
- public interface TestGroovyTrait$Trait$FieldHelper {
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    Object $0x0002pkg_TestGroovyTrait__myField;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    Object $ins$1pkg_TestGroovyTrait__myField;
- 
-    Object pkg_TestGroovyTrait__myField$set(Object var1);
 gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -13,16 +13,16 @@
- import org.codehaus.groovy.runtime.callsite.CallSiteArray;
- import org.codehaus.groovy.runtime.typehandling.ShortTypeHandling;
- 
--// $FF: synthetic class
-+// $QF: synthetic class
- @Generated
- public abstract class TestGroovyTrait$Trait$Helper implements GroovyObject {
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static ClassInfo $staticClassInfo;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    public static transient boolean __$stMC;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private transient MetaClass metaClass;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static SoftReference $callSiteArray;
- 
-    @Generated
-@@ -33,7 +33,7 @@
-       this.metaClass = var2;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public static void $init$(TestGroovyTrait $self) {
-       CallSite[] var1 = $getCallSiteArray();
-       var1[0]
-@@ -43,7 +43,7 @@
-          );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public static void $static$init$(Class<TestGroovyTrait> $static$self) {
-       CallSite[] var1 = $getCallSiteArray();
-    }
-@@ -63,7 +63,7 @@
-       var2[2].call((TestGroovyTrait$Trait$FieldHelper)ScriptBytecodeAdapter.castToType($self, TestGroovyTrait$Trait$FieldHelper.class), myField);
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public Object methodMissing(String name, Object args) {
-       CallSite[] var3 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.invokeMethodN(
-@@ -74,7 +74,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public static Object $static_methodMissing(String name, Object args) {
-       CallSite[] var2 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.invokeMethodN(
-@@ -85,7 +85,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public void propertyMissing(String name, Object value) {
-       CallSite[] var3 = $getCallSiteArray();
-       ScriptBytecodeAdapter.setProperty(
-@@ -93,7 +93,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public static void $static_propertyMissing(String name, Object value) {
-       CallSite[] var2 = $getCallSiteArray();
-       ScriptBytecodeAdapter.setProperty(
-@@ -101,7 +101,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public Object propertyMissing(String name) {
-       CallSite[] var2 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.getProperty(
-@@ -109,7 +109,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    public static Object $static_propertyMissing(String name) {
-       CallSite[] var1 = $getCallSiteArray();
-       return ScriptBytecodeAdapter.getProperty(
-@@ -117,7 +117,7 @@
-       );
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    protected MetaClass $getStaticMetaClass() {
-       if (this.getClass() != TestGroovyTrait$Trait$Helper.class) {
-          return ScriptBytecodeAdapter.initMetaClass(this);
 @@ -135,9 +135,8 @@
     @Internal
     @Transient
@@ -1967,52 +1419,9 @@ gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.8.1 1.10.0-20221220.042610-
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-@@ -150,21 +149,21 @@
-       this.metaClass = var1;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static void $createCallSiteArray_1(String[] var0) {
-       var0[0] = "pkg_TestGroovyTrait__myField$set";
-       var0[1] = "pkg_TestGroovyTrait__myField$get";
-       var0[2] = "pkg_TestGroovyTrait__myField$set";
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSiteArray $createCallSiteArray() {
-       String[] var0 = new String[3];
-       $createCallSiteArray_1(var0);
-       return new CallSiteArray(TestGroovyTrait$Trait$Helper.class, var0);
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSite[] $getCallSiteArray() {
-       CallSiteArray var0;
-       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
 gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -12,13 +12,13 @@
- import org.codehaus.groovy.runtime.callsite.CallSiteArray;
- 
- public class TestGroovyTryCatch implements GroovyObject {
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static ClassInfo $staticClassInfo;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    public static transient boolean __$stMC;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private transient MetaClass metaClass;
--   // $FF: synthetic field
-+   // $QF: synthetic field
-    private static SoftReference $callSiteArray;
- 
-    @Generated
 @@ -38,7 +38,6 @@
           } catch (Exception var6) {
              var1[2].call(var1[3].callGetProperty(System.class), "Exception");
@@ -2021,7 +1430,7 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.1 1.10.0-20221220.042610-29
        } finally {
           ;
        }
-@@ -55,13 +54,12 @@
+@@ -55,7 +54,6 @@
           } catch (Throwable var9) {
              var1[8].call(var1[9].callGetProperty(System.class), "Throwable");
           }
@@ -2029,13 +1438,6 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.1 1.10.0-20221220.042610-29
        } finally {
           ;
        }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    protected MetaClass $getStaticMetaClass() {
-       if (this.getClass() != TestGroovyTryCatch.class) {
-          return ScriptBytecodeAdapter.initMetaClass(this);
 @@ -79,9 +77,8 @@
     @Internal
     @Transient
@@ -2047,32 +1449,6 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.1 1.10.0-20221220.042610-29
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-@@ -94,7 +91,7 @@
-       this.metaClass = var1;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static void $createCallSiteArray_1(String[] var0) {
-       var0[0] = "println";
-       var0[1] = "out";
-@@ -108,14 +105,14 @@
-       var0[9] = "out";
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSiteArray $createCallSiteArray() {
-       String[] var0 = new String[10];
-       $createCallSiteArray_1(var0);
-       return new CallSiteArray(TestGroovyTryCatch.class, var0);
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static CallSite[] $getCallSiteArray() {
-       CallSiteArray var0;
-       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
 gen_diffs.py pkg/TestIfElseTernary1.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -3421,18 +2797,6 @@ gen_diffs.py pkg/TestIllegalMethodNames.java 1.8.1 1.10.0-20221220.042610-29
        return var1 <= this.()I();
     }
  
-gen_diffs.py pkg/TestImplicitlySealedEnum.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -13,7 +13,7 @@
-       return 1;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static TestImplicitlySealedEnum[] $values() {
-       return new TestImplicitlySealedEnum[]{A, B};
-    }
 gen_diffs.py pkg/TestInfiniteLoop.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -3532,18 +2896,6 @@ gen_diffs.py pkg/TestIntBoolMergeNoDebug.java 1.8.1 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestIrreducible.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -3,7 +3,7 @@
- public final class TestIrreducible {
-    public static int field;
- 
--   // $FF: Irreducible bytecode was duplicated to produce valid code
-+   // $QF: Irreducible bytecode was duplicated to produce valid code
-    public static void test() {
-       if (field == 1) {
-          System.out.println("2");
 gen_diffs.py pkg/TestIterationOverGenericsWithoutLvt.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -3644,7 +2996,7 @@ gen_diffs.py pkg/TestKotlinEnumWhen.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public final void testConsecutiveMixed() {
-@@ -113,32 +110,31 @@
+@@ -113,14 +110,13 @@
           case THIRD:
              System.out.println("third!");
        }
@@ -3660,28 +3012,6 @@ gen_diffs.py pkg/TestKotlinEnumWhen.java 1.8.1 1.10.0-20221220.042610-29
        throw new Exception();
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static final TestKotlinEnumWhen[] $values() {
-       return new TestKotlinEnumWhen[]{FIRST, SECOND, THIRD};
-    }
- 
--   // $FF: synthetic class
-+   // $QF: synthetic class
-    @Metadata(
-       mv = {1, 6, 0},
-       k = 3,
-       xi = 48
-    )
-    public class WhenMappings {
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static final int[] $EnumSwitchMapping$0;
--      // $FF: synthetic field
-+      // $QF: synthetic field
-       public static final int[] $EnumSwitchMapping$1;
- 
-       static {
 gen_diffs.py pkg/TestLabeledBreaks.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -3714,18 +3044,6 @@ gen_diffs.py pkg/TestLambdaGenericCall.java 1.8.1 1.10.0-20221220.042610-29
           System.out.println(numbers[0]);
        });
     }
-gen_diffs.py pkg/TestLocalEnum.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -6,7 +6,7 @@
-          VALID,
-          INVALID;
- 
--         // $FF: synthetic method
-+         // $QF: synthetic method
-          private static Type[] $values() {
-             return new Type[]{VALID, INVALID};
-          }
 gen_diffs.py pkg/TestLocalScopeClash.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -3836,7 +3154,7 @@ gen_diffs.py pkg/TestLoopFinally.java 1.8.1 1.10.0-20221220.042610-29
     }
  
 -   public int test3(int param1) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because the return value of "org.jetbrains.java.decompiler.modules.decompiler.stats.Statement.getExprents()" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.stats.IfStatement.initExprents(IfStatement.java)
@@ -3939,7 +3257,7 @@ gen_diffs.py pkg/TestLoopFinally.java 1.8.1 1.10.0-20221220.042610-29
     }
  
 -   public int test4(int param1) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because the return value of "org.jetbrains.java.decompiler.modules.decompiler.stats.Statement.getExprents()" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.stats.IfStatement.initExprents(IfStatement.java)
@@ -3998,7 +3316,7 @@ gen_diffs.py pkg/TestLoopFinally.java 1.8.1 1.10.0-20221220.042610-29
     }
  
 -   public int test5(int param1) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because the return value of "org.jetbrains.java.decompiler.modules.decompiler.stats.Statement.getExprents()" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.stats.IfStatement.initExprents(IfStatement.java)
@@ -4080,7 +3398,7 @@ gen_diffs.py pkg/TestLoopFinally.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public void loopInFinally() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "java.lang.Comparable.compareTo(Object)" because the return value of "java.util.function.Function.apply(Object)" is null
 -      //   at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:473)
@@ -4254,15 +3572,6 @@ gen_diffs.py pkg/TestMethodParamsNoLvt.java 1.8.1 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestMissingConstructorCallBad.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -2,7 +2,7 @@
- 
- public class TestMissingConstructorCallBad {
-    private TestMissingConstructorCallBad() {
--      // $FF: Couldn't be decompiled
-+      // $QF: Couldn't be decompiled
-       // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
-       // java.lang.RuntimeException: Constructor pkg/TestMissingConstructorCallBad.<init>(Ljava/lang/Object;)V not found
-       //  at org.jetbrains.java.decompiler.modules.decompiler.exps.ExprUtil.getSyntheticParametersMask(ExprUtil.java)
 @@ -28,6 +28,5 @@
           new TestMissingConstructorCallBad();
        } catch (Throwable var2) {
@@ -4339,19 +3648,7 @@ gen_diffs.py pkg/TestMultipleStaticBlocks.java 1.8.1 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -17,26 +17,26 @@
-    d2 = {"bar", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foo2", "quiltflower_testDataKotlin"}
- )
- public final class TestNamedSuspendFun2Kt {
--   // $FF: Handled exception range with multiple entry points by splitting it
--   // $FF: Inserted dummy exception handlers to handle obfuscated exceptions
--   // $FF: Irreducible bytecode was duplicated to produce valid code
--   // $FF: Could not inline inconsistent finally blocks
-+   // $QF: Handled exception range with multiple entry points by splitting it
-+   // $QF: Inserted dummy exception handlers to handle obfuscated exceptions
-+   // $QF: Irreducible bytecode was duplicated to produce valid code
-+   // $QF: Could not inline inconsistent finally blocks
-    // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
+@@ -25,12 +25,12 @@
     @Nullable
     public static final Object foo2(@NotNull Continuation<? super Integer> var0) {
        Continuation $continuation;
@@ -4365,13 +3662,6 @@ gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.1 1.10.0-20221220.042610-29
 +               break label261;
              }
           }
- 
-          $continuation = new ContinuationImpl(var0) {
-             Object L$0;
--            // $FF: synthetic field
-+            // $QF: synthetic field
-             Object result;
-             int label;
  
 @@ -50,9 +50,9 @@
        }
@@ -4607,7 +3897,7 @@ gen_diffs.py pkg/TestObjectPhi.java 1.8.1 1.10.0-20221220.042610-29
  
  public class TestObjectPhi {
     public Object example(boolean bool) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.RuntimeException: invalid constant type: Ljava/lang/Object;
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.exps.ConstExprent.toJava(ConstExprent.java)
@@ -4643,27 +3933,6 @@ gen_diffs.py pkg/TestObjectPhi.java 1.8.1 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestOldECJInner.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -15,7 +15,7 @@
-    }
- 
-    private static TestOldECJInner.Inner test() {
--      // $FF: Couldn't be decompiled
-+      // $QF: Couldn't be decompiled
-       // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
-       // java.lang.RuntimeException: Constructor pkg/TestOldECJInner.<init>(Lpkg/TestOldECJInner;Lpkg/TestOldECJInner$Inner;)V not found
-       //  at org.jetbrains.java.decompiler.modules.decompiler.exps.ExprUtil.getSyntheticParametersMask(ExprUtil.java)
-@@ -41,7 +41,7 @@
-       private Inner() {
-       }
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       Inner(TestOldECJInner.Inner var2) {
-          this();
-       }
 gen_diffs.py pkg/TestPatternMatching.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -5521,7 +4790,7 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.1 1.10.0-20221220.042610-29
  
  public class TestRecordPattern1 {
     void test(Object o) {
-@@ -9,97 +11,59 @@
+@@ -9,94 +11,56 @@
           int b = Integer.valueOf(var4);
           System.out.println(a + b);
        }
@@ -5553,7 +4822,7 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.1 1.10.0-20221220.042610-29
     }
  
 -   int test3(Object param1) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot read field "type" because "type2" is null
 -      //  at org.jetbrains.java.decompiler.struct.gen.VarType.getCommonSupertype(VarType.java)
@@ -5654,20 +4923,7 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.1 1.10.0-20221220.042610-29
 +      }
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$a(TestRecordPattern1.Point arg0) {
-       try {
-          return arg0.a();
-@@ -108,7 +72,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$b(TestRecordPattern1.Point arg0) {
-       try {
-          return arg0.b();
+    // $QF: synthetic method
 gen_diffs.py pkg/TestRecordPattern2.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -5678,12 +4934,12 @@ gen_diffs.py pkg/TestRecordPattern2.java 1.8.1 1.10.0-20221220.042610-29
  
  public class TestRecordPattern2 {
     void test(TestRecordPattern2.Pair<?, ?> p) {
-@@ -53,191 +55,77 @@
+@@ -53,188 +55,74 @@
        System.out.println("Unconditional");
     }
  
 -   Object test3(TestRecordPattern2.Pair<?, ?> param1) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot read field "type" because "val" is null
 -      //  at org.jetbrains.java.decompiler.struct.gen.VarType.isStrictSuperset(VarType.java)
@@ -5934,152 +5190,18 @@ gen_diffs.py pkg/TestRecordPattern2.java 1.8.1 1.10.0-20221220.042610-29
 +      }
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$a(TestRecordPattern2.Pair arg0) {
-       try {
-          return arg0.a();
-@@ -246,7 +134,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$b(TestRecordPattern2.Pair arg0) {
-       try {
-          return arg0.b();
+    // $QF: synthetic method
 gen_diffs.py pkg/TestRecordPattern3.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -32,10 +32,9 @@
+@@ -32,7 +32,6 @@
              System.out.println(a + var21 + var22 + ((double)((long)(i1 + i2 + i3 + i4) + l1 + l2 + (long)c1 + (long)c2 + (long)bb) + dd) + bool);
           }
        }
 -
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$a(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.a();
-@@ -44,7 +43,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static String $proxy$b(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.b();
-@@ -53,7 +52,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static String $proxy$c(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.c();
-@@ -62,7 +61,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$i1(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.i1();
-@@ -71,7 +70,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$i2(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.i2();
-@@ -80,7 +79,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$i3(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.i3();
-@@ -89,7 +88,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static int $proxy$i4(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.i4();
-@@ -98,7 +97,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static long $proxy$l1(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.l1();
-@@ -107,7 +106,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static long $proxy$l2(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.l2();
-@@ -116,7 +115,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static char $proxy$c1(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.c1();
-@@ -125,7 +124,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static char $proxy$c2(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.c2();
-@@ -134,7 +133,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static byte $proxy$bb(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.bb();
-@@ -143,7 +142,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static double $proxy$dd(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.dd();
-@@ -152,7 +151,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static boolean $proxy$bool(TestRecordPattern3.Bundle arg0) {
-       try {
-          return arg0.bool();
+    // $QF: synthetic method
 gen_diffs.py pkg/TestRecordPattern4.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -6100,98 +5222,18 @@ gen_diffs.py pkg/TestRecordPattern4.java 1.8.1 1.10.0-20221220.042610-29
                          }
                       }
                    }
-@@ -72,10 +71,9 @@
+@@ -72,7 +71,6 @@
              }
           }
        }
 -
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$a(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.a();
-@@ -84,7 +82,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$b(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.b();
-@@ -93,7 +91,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$c(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.c();
-@@ -102,7 +100,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$d(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.d();
-@@ -111,7 +109,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$e(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.e();
-@@ -120,7 +118,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$f(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.f();
-@@ -129,7 +127,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$g(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.g();
-@@ -138,7 +136,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$h(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.h();
-@@ -147,7 +145,7 @@
-       }
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $proxy$i(TestRecordPattern4.Many arg0) {
-       try {
-          return arg0.i();
+    // $QF: synthetic method
 gen_diffs.py pkg/TestRecursiveLambda.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -1,7 +1,7 @@
--// $FF: Couldn't be decompiled
-+// $QF: Couldn't be decompiled
- // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
- // java.lang.IllegalStateException: Lambda pkg/TestRecursiveLambda is recursive?!
+@@ -4,4 +4,4 @@
  //  at org.jetbrains.java.decompiler.main.rels.LambdaProcessor.processClass(LambdaProcessor.java)
  //  at org.jetbrains.java.decompiler.main.ClassesProcessor.writeClass(ClassesProcessor.java)
  //  at org.jetbrains.java.decompiler.main.Fernflower.getClassContent(Fernflower.java)
@@ -6209,15 +5251,6 @@ gen_diffs.py pkg/TestRunSuspend.java 1.8.1 1.10.0-20221220.042610-29
        return this.result;
     }
  
-@@ -29,7 +29,7 @@
-       this.result = <set-?>;
-    }
- 
--   // $FF: Extended synchronized range to monitorexit
-+   // $QF: Extended synchronized range to monitorexit
-    public final void await() {
-       synchronized(this) {
-          int $i$a$-synchronized-TestRunSuspend$await$1 = 0;
 gen_diffs.py pkg/TestSealedFinal.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -6245,7 +5278,7 @@ gen_diffs.py pkg/TestSharedVarIndex.java 1.8.1 1.10.0-20221220.042610-29
  
  public class TestSharedVarIndex {
     public void StringArrayVsString() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.RuntimeException: invalid constant type: [Ljava/lang/String;
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.exps.ConstExprent.toJava(ConstExprent.java)
@@ -6316,7 +5349,7 @@ gen_diffs.py pkg/TestStaticIterator.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public static void test() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot read field "bytecode" because the return value of "org.jetbrains.java.decompiler.modules.decompiler.exps.InvocationExprent.getInstance()" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.MergeHelper.matchForEach(MergeHelper.java)
@@ -6966,7 +5999,7 @@ gen_diffs.py pkg/TestSwitchPatternMatching17.java 1.8.1 1.10.0-20221220.042610-2
 +
  public class TestSwitchPatternMatching17 {
 -   static void test4(Object param0) {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot read field "typeFamily" because "newType" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.changeVarExprentType(VarTypeProcessor.java)
@@ -7307,15 +6340,6 @@ gen_diffs.py pkg/TestSwitchPatternMatching19.java 1.8.1 1.10.0-20221220.042610-2
        }
     }
  
-@@ -105,7 +72,7 @@
-       X2,
-       X3;
- 
--      // $FF: synthetic method
-+      // $QF: synthetic method
-       private static TestSwitchPatternMatching19.XXX[] $values() {
-          return new TestSwitchPatternMatching19.XXX[]{X1, X2, X3};
-       }
 gen_diffs.py pkg/TestSwitchPatternMatching2.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -8453,7 +7477,7 @@ gen_diffs.py pkg/TestSynchronizedLoop.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public void testFlatten() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
 -      //   at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
@@ -8659,48 +7683,6 @@ gen_diffs.py pkg/TestSynchronizedTrySharing.java 1.8.1 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestSynchronizedUnprotected.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -11,7 +11,7 @@
-    d2 = {"Lpkg/TestSynchronizedUnprotected;", "", "()V", "test", "", "quiltflower_testDataKotlin"}
- )
- public final class TestSynchronizedUnprotected {
--   // $FF: Extended synchronized range to monitorexit
-+   // $QF: Extended synchronized range to monitorexit
-    public final void test() {
-       synchronized(this) {
-          int $i$a$-synchronized-TestSynchronizedUnprotected$test$1 = 0;
-gen_diffs.py pkg/TestSynchronizeNull.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -1,7 +1,7 @@
- package pkg;
- 
- public class TestSynchronizeNull {
--   // $FF: Added assignment to ensure synchronized validity
-+   // $QF: Added assignment to ensure synchronized validity
-    public void test() {
-       new Object();
-       Object var2 = null;
-@@ -11,7 +11,7 @@
-       }
-    }
- 
--   // $FF: Added assignment to ensure synchronized validity
-+   // $QF: Added assignment to ensure synchronized validity
-    public void test1() {
-       Object var2 = null;
-       Object var5;
-@@ -20,7 +20,7 @@
-       }
-    }
- 
--   // $FF: Added assignment to ensure synchronized validity
-+   // $QF: Added assignment to ensure synchronized validity
-    public void test2() {
-       Object var2 = null;
-       Object var6;
 gen_diffs.py pkg/TestTernaryCall.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
@@ -8827,7 +7809,7 @@ gen_diffs.py pkg/TestTryFinally.java 1.8.1 1.10.0-20221220.042610-29
  package pkg;
  
  public class TestTryFinally {
--   // $FF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
+-   // $QF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
 -   // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
     public void test0() {
 -      boolean var7 = false;
@@ -9028,12 +8010,8 @@ gen_diffs.py pkg/TestTryReturn.java 1.8.1 1.10.0-20221220.042610-29
        } finally {
           System.out.println("Finally");
        }
-@@ -132,11 +133,11 @@
-    }
- 
-    public void testParsingFailure() {
--      // $FF: Couldn't be decompiled
-+      // $QF: Couldn't be decompiled
+@@ -135,8 +136,8 @@
+       // $QF: Couldn't be decompiled
        // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
        // java.lang.RuntimeException: parsing failure!
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.DomHelper.parseGraph(DomHelper.java)
@@ -9047,7 +8025,7 @@ gen_diffs.py pkg/TestTryReturn.java 1.8.1 1.10.0-20221220.042610-29
     }
  
     public void testPostdomFailure() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "org.jetbrains.java.decompiler.util.FastFixedSetFactory$FastFixedSet.contains(Object)" because "predset" is null
 -      //   at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.lambda$removeErroneousNodes$0(FastExtendedPostdominanceHelper.java:168)
@@ -9094,7 +8072,7 @@ gen_diffs.py pkg/TestTryReturn.java 1.8.1 1.10.0-20221220.042610-29
 -      // 41: return
 -   }
 -
--   // $FF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
+-   // $QF: Could not verify finally blocks. A semaphore variable has been added to preserve control flow.
 -   // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 +      System.out.println(1);
 +
@@ -9352,7 +8330,7 @@ gen_diffs.py pkg/TestTryWithResourcesFakeTrigger.java 1.8.1 1.10.0-20221220.0426
  
  public class TestTryWithResourcesFakeTrigger {
     public void testTrigger1() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 -      //   at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
@@ -9398,7 +8376,7 @@ gen_diffs.py pkg/TestTryWithResourcesFakeTrigger.java 1.8.1 1.10.0-20221220.0426
     }
  
     public void testTrigger2() {
--      // $FF: Couldn't be decompiled
+-      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot read field "type" because "inner" is null
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.TryWithResourcesProcessor.makeTryWithResourceJ11(TryWithResourcesProcessor.java)
@@ -9563,18 +8541,14 @@ gen_diffs.py pkg/TestTryWithResourcesManyJ16.java 1.8.1 1.10.0-20221220.042610-2
 gen_diffs.py pkg/TestTryWithResourcesManyJ9.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -61,10 +61,9 @@
+@@ -61,7 +61,6 @@
        } finally {
           $closeResource(var3, s1);
        }
 -
     }
  
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static void $closeResource(Throwable x0, AutoCloseable x1) {
-       if (x0 != null) {
-          try {
+    // $QF: synthetic method
 @@ -75,6 +74,5 @@
        } else {
           x1.close();
@@ -9718,12 +8692,8 @@ gen_diffs.py pkg/TestTryWithResourcesOuterJ16.java 1.8.1 1.10.0-20221220.042610-
 gen_diffs.py pkg/TestTryWithResourcesReturnJ16.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
-@@ -36,11 +36,11 @@
-    }
- 
-    public Scanner testFinallyNested(File param1) {
--      // $FF: Couldn't be decompiled
-+      // $QF: Couldn't be decompiled
+@@ -39,8 +39,8 @@
+       // $QF: Couldn't be decompiled
        // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
        // java.lang.RuntimeException: parsing failure!
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.DomHelper.parseGraph(DomHelper.java)
@@ -9780,18 +8750,6 @@ gen_diffs.py pkg/TestTryWithResourcesSwitchJ16.java 1.8.1 1.10.0-20221220.042610
                 case 3:
                    System.out.println("3");
                    return 1;
-gen_diffs.py pkg/TestUnionType.java 1.8.1 1.10.0-20221220.042610-29
---- 1.8.1
-+++ 1.10.0-20221220.042610-29
-@@ -8,7 +8,7 @@
-       return (c1, c2) -> 1;
-    }
- 
--   // $FF: synthetic method
-+   // $QF: synthetic method
-    private static Object $deserializeLambda$(SerializedLambda lambda) {
-       String var1 = lambda.getImplMethodName();
-       byte var2 = -1;
 gen_diffs.py pkg/TestUnionTypeAssign.java 1.8.1 1.10.0-20221220.042610-29
 --- 1.8.1
 +++ 1.10.0-20221220.042610-29
