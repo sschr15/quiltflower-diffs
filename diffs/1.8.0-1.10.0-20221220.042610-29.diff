@@ -1,122 +1,19 @@
-gen_diffs.py pkg/EnumLike$.java 1.8.0 1.10.0-20221220.042610-29
+gen_diffs.py ext/Direction.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -16,10 +16,12 @@
-       return new ModuleSerializationProxy(EnumLike$.class);
-    }
+@@ -8,7 +8,7 @@
+    UP,
+    DOWN;
  
-+   @Override
-    public int hashCode() {
-       return -2006338472;
-    }
- 
-+   @Override
-    public String toString() {
-       return "EnumLike";
-    }
-gen_diffs.py pkg/Option1$.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -23,6 +23,7 @@
-       return x$1;
-    }
- 
-+   @Override
-    public String toString() {
-       return "Option1";
-    }
-gen_diffs.py pkg/Option1.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -25,6 +25,7 @@
-       this.value = value;
-    }
- 
-+   @Override
-    public int hashCode() {
-       int var1 = -889275714;
-       var1 = Statics.mix(var1, this.productPrefix().hashCode());
-@@ -32,6 +33,7 @@
-       return Statics.finalizeHash(var1, 1);
-    }
- 
-+   @Override
-    public boolean equals(final Object x$0) {
-       if (this != x$0) {
-          boolean var10000;
-@@ -50,6 +52,7 @@
-       return true;
-    }
- 
-+   @Override
-    public String toString() {
-       return .MODULE$._toString(this);
-    }
-gen_diffs.py pkg/Option2$.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -23,6 +23,7 @@
-       return x$1;
-    }
- 
-+   @Override
-    public String toString() {
-       return "Option2";
-    }
-gen_diffs.py pkg/Option2.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -29,6 +29,7 @@
-       this.z = z;
-    }
- 
-+   @Override
-    public int hashCode() {
-       int var1 = -889275714;
-       var1 = Statics.mix(var1, this.productPrefix().hashCode());
-@@ -38,6 +39,7 @@
-       return Statics.finalizeHash(var1, 3);
-    }
- 
-+   @Override
-    public boolean equals(final Object x$0) {
-       if (this != x$0) {
-          boolean var10000;
-@@ -56,6 +58,7 @@
-       return true;
-    }
- 
-+   @Override
-    public String toString() {
-       return .MODULE$._toString(this);
-    }
-gen_diffs.py pkg/Option3$.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -23,6 +23,7 @@
-       return x$1;
-    }
- 
-+   @Override
-    public String toString() {
-       return "Option3";
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Direction[] $values() {
+       return new Direction[]{NORTH, SOUTH, EAST, WEST, UP, DOWN};
     }
 gen_diffs.py pkg/Option3.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -25,37 +25,22 @@
-       this.value = value;
-    }
- 
-+   @Override
-    public int hashCode() {
-       return .MODULE$._hashCode(this);
-    }
- 
-+   @Override
-    public boolean equals(final Object x$0) {
-       if (this != x$0) {
-          boolean var5;
+@@ -37,27 +37,10 @@
           if (!(x$0 instanceof Option3)) {
              var5 = false;
           } else {
@@ -148,14 +45,6 @@ gen_diffs.py pkg/Option3.java 1.8.0 1.10.0-20221220.042610-29
           }
  
           if (!var5) {
-@@ -66,6 +51,7 @@
-       return true;
-    }
- 
-+   @Override
-    public String toString() {
-       return .MODULE$._toString(this);
-    }
 gen_diffs.py pkg/TestAccidentalSwitchExpression.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -207,29 +96,7 @@ gen_diffs.py pkg/TestAmbiguousCall.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestAnonymousClass.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -2,18 +2,21 @@
- 
- public abstract class TestAnonymousClass {
-    public static final Runnable R3 = new Runnable() {
-+      @Override
-       public void run() {
-          int a = 5;
-          int b = 5;
-       }
-    };
-    public static final Runnable R = new Runnable() {
-+      @Override
-       public void run() {
-          int a = 5;
-          int b = 5;
-       }
-    };
-    public static final Runnable R1 = new Runnable() {
-+      @Override
-       public void run() {
-          int a = 5;
-          int b = 5;
-@@ -60,15 +63,14 @@
+@@ -63,15 +63,14 @@
           int x = 5;
           System.out.println(5);
        }
@@ -247,14 +114,6 @@ gen_diffs.py pkg/TestAnonymousClass.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     void boo() {
-@@ -85,6 +87,7 @@
- 
-    private static class Inner {
-       private static Runnable R_I = new Runnable() {
-+         @Override
-          public void run() {
-             int a = 5;
-             int b = 5;
 gen_diffs.py pkg/TestAnonymousClassConstructor.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -356,28 +215,6 @@ gen_diffs.py pkg/TestAnonymousObject.java 1.8.0 1.10.0-20221220.042610-29
 +      new Object() {
           {
              System.out.println("Hi");
-          }
-gen_diffs.py pkg/TestAnonymousParams.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -7,6 +7,7 @@
- public class TestAnonymousParams {
-    void foo(InputStream in, final int a) throws IOException {
-       FilterInputStream filterInputStream = new FilterInputStream(in) {
-+         @Override
-          public int read() throws IOException {
-             return a;
-          }
-gen_diffs.py pkg/TestAnonymousSignature.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -6,6 +6,7 @@
- public class TestAnonymousSignature {
-    public static void main(String[] args) {
-       System.out.println(new ArrayList<String>() {
-+         @Override
-          public int size() {
-             return super.size();
           }
 gen_diffs.py pkg/TestArrayAssign.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
@@ -512,6 +349,18 @@ gen_diffs.py pkg/TestAssertJ16.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
+gen_diffs.py pkg/TestAssertMerge.java 1.8.0 1.10.0-20221220.042610-29
+--- 1.8.0
++++ 1.10.0-20221220.042610-29
+@@ -1,7 +1,7 @@
+ package pkg;
+ 
+ public class TestAssertMerge {
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    static final boolean $assertionsDisabled = !TestAssertMerge.class.desiredAssertionStatus();
+ 
+    public void test(int i, int j) {
 gen_diffs.py pkg/TestAssertSwitchExpression.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -719,18 +568,6 @@ gen_diffs.py pkg/TestBooleanSwitchExpression4.java 1.8.0 1.10.0-20221220.042610-
           }
  
           System.out.println("Nice");
-gen_diffs.py pkg/TestBoxingConstructor.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -19,6 +19,6 @@
-    }
- 
-    public TestBoxingConstructor(Object x, Object y, boolean marker, boolean marker2) {
--      this((Integer)x, (Integer)y);
-+      this(((Integer)x).intValue(), ((Integer)y).intValue());
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestCastObjectToPrimitive.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -742,39 +579,10 @@ gen_diffs.py pkg/TestCastObjectToPrimitive.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestClassLambda.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -44,7 +44,7 @@
-    }
- 
-    public void testLambda6() {
--      List<String> list = new ArrayList();
-+      List<String> list = new ArrayList<>();
-       int bottom = list.size() * 2;
-       int top = list.size() * 5;
-       list.removeIf(s -> bottom >= s.length() && s.length() <= top);
-@@ -59,7 +59,7 @@
-    }
- 
-    public static String function(Supplier<String> supplier) {
--      return (String)supplier.get();
-+      return supplier.get();
-    }
- 
-    public static int localMax(int first, int second) {
 gen_diffs.py pkg/TestClassSimpleBytecodeMapping.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -4,6 +4,7 @@
-    public int test() {
-       System.out.println("before");
-       this.run(new Runnable() {
-+         @Override
-          public void run() {
-             System.out.println("Runnable");
-          }
-@@ -26,7 +27,6 @@
+@@ -27,7 +27,6 @@
        } finally {
           System.out.println("Finally");
        }
@@ -820,18 +628,6 @@ gen_diffs.py pkg/TestClassVar.java 1.8.0 1.10.0-20221220.042610-29
           }
        }
 -
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestCollectionItr.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -9,6 +9,6 @@
-    }
- 
-    private List<TestCollectionItr> list() {
--      return new ArrayList();
-+      return new ArrayList<>();
     }
  }
 \ No newline at end of file
@@ -959,8 +755,14 @@ gen_diffs.py pkg/TestCondy.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestConstructorSwitchExpression3.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -14,7 +14,7 @@
+@@ -14,12 +14,12 @@
        return new Random().nextInt(3);
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static TestConstructorSwitchExpression3[] $values() {
+       return new TestConstructorSwitchExpression3[]{T1, T2};
     }
  
 -   // $FF: Failed to inline enum fields
@@ -1044,6 +846,27 @@ gen_diffs.py pkg/TestDefiniteAssignment.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     void testBooleanNormalness(int n) {
+gen_diffs.py pkg/TestDoubleBraceInitializersJ17.java 1.8.0 1.10.0-20221220.042610-29
+--- 1.8.0
++++ 1.10.0-20221220.042610-29
+@@ -37,7 +37,7 @@
+          }
+       };
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static TestDoubleBraceInitializersJ17.TestEnum[] $values() {
+          return new TestDoubleBraceInitializersJ17.TestEnum[]{A, B};
+       }
+@@ -59,7 +59,7 @@
+ 
+       public int field;
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static TestDoubleBraceInitializersJ17.TestEnum1[] $values() {
+          return new TestDoubleBraceInitializersJ17.TestEnum1[]{A, B};
+       }
 gen_diffs.py pkg/TestDoublePopAfterJump.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -1104,24 +927,6 @@ gen_diffs.py pkg/TestDoWhileTrue.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestDuplicateLocals.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -53,12 +53,12 @@
-    }
- 
-    public static Integer test7(int var0) {
--      return (Integer)new HashMap().computeIfAbsent(var0, var0x -> var0x + 1);
-+      return new HashMap<Integer, Integer>().computeIfAbsent(var0, var0x -> var0x + 1);
-    }
- 
-    public class Inner {
-       public Integer test7(int var1) {
--         return (Integer)new HashMap().computeIfAbsent(var1, var1x -> var1x + TestDuplicateLocals.this.i);
-+         return new HashMap<Integer, Integer>().computeIfAbsent(var1, var1x -> var1x + TestDuplicateLocals.this.i);
-       }
-    }
- 
 gen_diffs.py pkg/TestDuplicateSwitchLocals.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -1254,15 +1059,6 @@ gen_diffs.py pkg/TestEnumSwitchEmpty.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestExceptionElse.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -7,7 +7,7 @@
-       System.out.println("Test");
- 
-       while(!numbers.isEmpty()) {
--         Number number = (Number)numbers.removeFirst();
-+         Number number = numbers.removeFirst();
-          if (number instanceof Integer) {
-             System.out.println(1);
-          } else if (numbers.size() == 4 && number instanceof Long) {
 @@ -22,6 +22,5 @@
              System.out.println(3);
           }
@@ -1501,7 +1297,7 @@ gen_diffs.py pkg/TestForeachMultipleLoops.java 1.8.0 1.10.0-20221220.042610-29
 -                  }
 -
 -                  entry = (Entry)var4.next();
--                  String s = (String)entry.getValue();
+-                  String s = entry.getValue();
 -                  if (a == null) {
 -                     s = s + s;
 -                     break;
@@ -1543,19 +1339,10 @@ gen_diffs.py pkg/TestForeachMultipleLoops.java 1.8.0 1.10.0-20221220.042610-29
              }
  
              try {
-@@ -70,7 +56,7 @@
-                   }
- 
-                   entry = (Entry)var4.next();
--                  String s = (String)entry.getValue();
-+                  String s = entry.getValue();
-                   if (a == null) {
-                      s = s + s;
-                      break;
 gen_diffs.py pkg/TestForeachVardef.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -1,16 +1,20 @@
+@@ -1,12 +1,16 @@
  package pkg;
  
 +import java.util.Iterator;
@@ -1573,11 +1360,6 @@ gen_diffs.py pkg/TestForeachVardef.java 1.8.0 1.10.0-20221220.042610-29
              System.out.println(t);
           }
        } else {
--         t = ((String)s.get(0)).length() > 20 ? "no" : t;
-+         t = s.get(0).length() > 20 ? "no" : t;
-       }
- 
-       return t;
 @@ -19,7 +23,10 @@
     public int testArray(int[] a) {
        int t = 0;
@@ -1590,44 +1372,10 @@ gen_diffs.py pkg/TestForeachVardef.java 1.8.0 1.10.0-20221220.042610-29
              System.out.println(t);
           }
        } else {
-gen_diffs.py pkg/TestGenericCast.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -5,13 +5,13 @@
- 
- public class TestGenericCast {
-    private List l1 = new ArrayList();
--   private List<String> l2 = new ArrayList();
-+   private List<String> l2 = new ArrayList<>();
- 
-    public String[] test1() {
--      return (String[])this.l1.toArray(new String[0]);
-+      return this.l1.toArray(new String[0]);
-    }
- 
-    public String[] test2() {
--      return (String[])this.l2.toArray(new String[0]);
-+      return this.l2.toArray(new String[0]);
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestGenericCasts.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -12,17 +12,16 @@
- 
-    public void test2(Function<String, List<String>> f) {
-       String s = "123abc";
--      ((List)f.apply(s)).remove(s);
--      List<String> l = (List)f.apply(s.toUpperCase());
-+      f.apply(s).remove(s);
-+      List<String> l = f.apply(s.toUpperCase());
-    }
- 
-    public void test3(List<List<String>> l) {
-       for(int i = l.size() - 1; i >= 0; --i) {
--         for(String s : (List)l.get(i)) {
-+         for(String s : l.get(i)) {
+@@ -22,7 +22,6 @@
              System.out.println(s);
           }
        }
@@ -1635,78 +1383,6 @@ gen_diffs.py pkg/TestGenericCasts.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     public void test4(Collection<String> c) {
-gen_diffs.py pkg/TestGenericInput.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -7,7 +7,7 @@
-    private TestGenericInput.Inner<T> inner;
- 
-    public void test(List<T> list) {
--      this.inner.apply(list);
-+      this.inner.apply((T)list);
-    }
- 
-    public interface Inner<T> extends Function<List<T>, TestGenericInput<T>> {
-gen_diffs.py pkg/TestGenericMap.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -4,22 +4,22 @@
- import java.util.Map;
- 
- public class TestGenericMap {
--   public Map<String, TestGenericMap.Inner<?>> field = new HashMap();
-+   public Map<String, TestGenericMap.Inner<?>> field = new HashMap<>();
- 
-    public <T extends Number> TestGenericMap.Inner<T> get(String s) {
-       return (TestGenericMap.Inner<T>)this.field.get(s);
-    }
- 
-    public <T extends Number> TestGenericMap.Inner<?> get1(String s) {
--      return (TestGenericMap.Inner<?>)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public TestGenericMap.Inner<?> get2(String s) {
--      return (TestGenericMap.Inner<?>)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public TestGenericMap.Inner get3(String s) {
--      return (TestGenericMap.Inner)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public class Inner<T> {
-gen_diffs.py pkg/TestGenericMapEntireClasspath.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -4,22 +4,22 @@
- import java.util.Map;
- 
- public class TestGenericMapEntireClasspath {
--   public Map<String, TestGenericMapEntireClasspath.Inner<?>> field = new HashMap();
-+   public Map<String, TestGenericMapEntireClasspath.Inner<?>> field = new HashMap<>();
- 
-    public <T extends Number> TestGenericMapEntireClasspath.Inner<T> get(String s) {
-       return (TestGenericMapEntireClasspath.Inner<T>)this.field.get(s);
-    }
- 
-    public <T extends Number> TestGenericMapEntireClasspath.Inner<?> get1(String s) {
--      return (TestGenericMapEntireClasspath.Inner<?>)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public TestGenericMapEntireClasspath.Inner<?> get2(String s) {
--      return (TestGenericMapEntireClasspath.Inner<?>)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public TestGenericMapEntireClasspath.Inner get3(String s) {
--      return (TestGenericMapEntireClasspath.Inner)this.field.get(s);
-+      return this.field.get(s);
-    }
- 
-    public class Inner<T> {
 gen_diffs.py pkg/TestGenericMapInput.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -1721,29 +1397,7 @@ gen_diffs.py pkg/TestGenericMapInput.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestGenerics.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -7,8 +7,8 @@
- 
- public class TestGenerics<A, B extends TestGenerics.Maps & List> {
-    static Map<String, Boolean> field = TestGenerics.Maps.newHashMap();
--   static List<List<String>> llstring = new ArrayList();
--   static List<Byte> bytes = new ArrayList();
-+   static List<List<String>> llstring = new ArrayList<>();
-+   static List<Byte> bytes = new ArrayList<>();
-    A[] aArray = (A[])(new Object[10]);
- 
-    public void genericAllocation() {
-@@ -20,8 +20,8 @@
-    }
- 
-    public void genericList() {
--      List<B> testList = new ArrayList();
--      B b = (B)testList.get(0);
-+      List<B> testList = new ArrayList<>();
-+      B b = testList.get(0);
-       System.out.println("B:" + b);
-    }
- 
-@@ -33,28 +33,25 @@
+@@ -33,14 +33,12 @@
        for(String s : field.keySet()) {
           System.out.println(s);
        }
@@ -1751,131 +1405,103 @@ gen_diffs.py pkg/TestGenerics.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     public void genericForEachWithCast() {
--      for(String s : (List)llstring.get(0)) {
-+      for(String s : llstring.get(0)) {
+       for(String s : llstring.get(0)) {
           System.out.println(s);
        }
 -
     }
  
     public <T extends Number> void genericSuperUp() {
--      List<T> list = new ArrayList();
-+      List<T> list = new ArrayList<>();
- 
+@@ -49,7 +47,6 @@
        for(Number number : bytes) {
--         list.add(number);
-+         list.add((T)number);
+          list.add((T)number);
        }
 -
     }
  
     public static class Maps {
-       public static <K, V> HashMap<K, V> newHashMap() {
--         return new HashMap();
-+         return new HashMap<>();
-       }
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestGenericsHierarchy.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -8,14 +8,14 @@
- 
-    public <V extends T> void test(V v) {
-       List<V> list = new ArrayList();
--      List<? extends T> list2 = new ArrayList();
--      List<T> list3 = new ArrayList();
-+      List<? extends T> list2 = new ArrayList<>();
-+      List<T> list3 = new ArrayList<>();
-       if (v != null) {
+@@ -14,7 +14,7 @@
           list2 = list;
        }
  
 -      V v1 = (V)list.get(0);
--      T v2 = (T)list2.get(0);
 +      V v1 = list.get(0);
-+      T v2 = list2.get(0);
+       T v2 = list2.get(0);
        list3.add(list2.get(0));
        this.field = (T)v;
-       this.setField((T)v);
-gen_diffs.py pkg/TestGenericsQualified.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -6,12 +6,12 @@
- import java.util.stream.Stream;
- 
- public class TestGenericsQualified {
--   public Comparator<String> field = Comparator.comparing(s -> s.length()).thenComparing(i -> i.toString());
--   public CompletableFuture<String> field2 = CompletableFuture.supplyAsync(() -> "").thenCompose(s -> CompletableFuture.supplyAsync(() -> s + "2"));
-+   public Comparator<String> field = Comparator.<String, Integer>comparing(s -> s.length()).thenComparing(i -> i.toString());
-+   public CompletableFuture<String> field2 = CompletableFuture.<String>supplyAsync(() -> "").thenCompose(s -> CompletableFuture.supplyAsync(() -> s + "2"));
-    public Optional<String> field3 = Optional.of("").map(s -> s + "3");
--   public Stream<String> field4 = Stream.of("1", "2").sorted(Comparator.comparing(s -> s.length()).thenComparing(i -> i.toString()));
-+   public Stream<String> field4 = Stream.of("1", "2").sorted(Comparator.<String, Integer>comparing(s -> s.length()).thenComparing(i -> i.toString()));
-    public Comparator<String> field5 = Comparator.comparing(String::length).thenComparing(i -> i.toString());
--   public Comparator<TestGenericsQualified> field6 = Comparator.comparing(TestGenericsQualified::get).reversed();
-+   public Comparator<TestGenericsQualified> field6 = Comparator.<TestGenericsQualified, Integer>comparing(TestGenericsQualified::get).reversed();
- 
-    public int get() {
-       return 0;
-@@ -22,6 +22,6 @@
-    }
- 
-    public Comparator<String> method() {
--      return Comparator.comparing(s -> s.length()).thenComparing(i -> i.toString());
-+      return Comparator.<String, Integer>comparing(s -> s.length()).thenComparing(i -> i.toString());
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestGenericsTernary.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -4,10 +4,10 @@
- import java.util.List;
- 
- public class TestGenericsTernary<T> {
--   public List<T> list = new ArrayList();
-+   public List<T> list = new ArrayList<>();
- 
-    public T test(int i) {
--      T t = (T)this.list.get(i);
-+      T t = this.list.get(i);
-       return this.accept(t) ? t : null;
-    }
- 
 gen_diffs.py pkg/TestGenericSuper.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,19 +6,19 @@
-    public T t1;
+@@ -7,7 +7,7 @@
  
     public <U extends T> void test(TestGenericSuper<T>.IO<T, U> io, Consumer<U> consumer) {
--      consumer.accept(null);
+       consumer.accept((T)null);
 -      U u = (U)io.mutate(this.t1);
-+      consumer.accept((T)null);
 +      U u = io.mutate(this.t1);
        consumer.accept(u);
     }
  
-    public <U extends T> void test2(T[] arr, Consumer<U> consumer) {
--      consumer.accept(null);
-+      consumer.accept((T)null);
-       U u = (U)arr[0];
--      consumer.accept(u);
-+      consumer.accept((T)u);
-    }
- 
-    public <U extends T> void test3(U[] arr, Consumer<T> consumer) {
--      consumer.accept(null);
-+      consumer.accept((T)null);
-       T t = (T)arr[0];
-       consumer.accept(t);
-    }
 gen_diffs.py pkg/TestGroovyClass.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -37,9 +37,8 @@
+@@ -21,13 +21,13 @@
+    private final TestGroovyClass.Inner i;
+    private final Runnable r;
+    private final Callable<String> c;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static ClassInfo $staticClassInfo;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    public static transient boolean __$stMC;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private transient MetaClass metaClass;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static SoftReference $callSiteArray;
+ 
+    @Generated
+@@ -46,7 +46,7 @@
+       this.metaClass = var6;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public Object this$dist$invoke$1(String name, Object args) {
+       CallSite[] var3 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.invokeMethodOnCurrentN(
+@@ -57,7 +57,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public void this$dist$set$1(String name, Object value) {
+       CallSite[] var3 = $getCallSiteArray();
+       ScriptBytecodeAdapter.setGroovyObjectProperty(
+@@ -65,7 +65,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public Object this$dist$get$1(String name) {
+       CallSite[] var2 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.getGroovyObjectProperty(
+@@ -73,7 +73,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    protected MetaClass $getStaticMetaClass() {
+       if (this.getClass() != TestGroovyClass.class) {
+          return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -91,9 +91,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {
@@ -1886,7 +1512,106 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.0 1.10.0-20221220.042610-29
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-@@ -85,9 +84,8 @@
+@@ -126,20 +125,20 @@
+       return this.c;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static void $createCallSiteArray_1(String[] var0) {
+       var0[0] = "<$constructor$>";
+       var0[1] = "<$constructor$>";
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSiteArray $createCallSiteArray() {
+       String[] var0 = new String[2];
+       $createCallSiteArray_1(var0);
+       return new CallSiteArray(TestGroovyClass.class, var0);
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSite[] $getCallSiteArray() {
+       CallSiteArray var0;
+       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
+@@ -151,13 +150,13 @@
+    }
+ 
+    public class Inner implements GroovyObject {
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static ClassInfo $staticClassInfo;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static transient boolean __$stMC;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private transient MetaClass metaClass;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static SoftReference $callSiteArray;
+ 
+       @Generated
+@@ -168,13 +167,13 @@
+          this.metaClass = var4;
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public Object methodMissing(String name, Object args) {
+          CallSite[] var3 = $getCallSiteArray();
+          return TestGroovyClass.this.this$dist$invoke$1(name, args);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static Object $static_methodMissing(String name, Object args) {
+          CallSite[] var2 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.invokeMethodN(
+@@ -185,13 +184,13 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public void propertyMissing(String name, Object value) {
+          CallSite[] var3 = $getCallSiteArray();
+          TestGroovyClass.this.this$dist$set$1(name, value);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static void $static_propertyMissing(String name, Object value) {
+          CallSite[] var2 = $getCallSiteArray();
+          ScriptBytecodeAdapter.setProperty(
+@@ -199,13 +198,13 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public Object propertyMissing(String name) {
+          CallSite[] var2 = $getCallSiteArray();
+          return TestGroovyClass.this.this$dist$get$1(name);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static Object $static_propertyMissing(String name) {
+          CallSite[] var1 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.getProperty(
+@@ -213,7 +212,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       protected MetaClass $getStaticMetaClass() {
+          if (this.getClass() != TestGroovyClass.Inner.class) {
+             return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -231,9 +230,8 @@
        @Internal
        @Transient
        public MetaClass getMetaClass() {
@@ -1897,7 +1622,104 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.0 1.10.0-20221220.042610-29
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
-@@ -114,9 +112,8 @@
+@@ -246,13 +244,13 @@
+          this.metaClass = var1;
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSiteArray $createCallSiteArray() {
+          String[] var0 = new String[0];
+          return new CallSiteArray(TestGroovyClass.Inner.class, var0);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSite[] $getCallSiteArray() {
+          CallSiteArray var0;
+          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
+@@ -265,13 +263,13 @@
+    }
+ 
+    public static class Nested implements GroovyObject {
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static ClassInfo $staticClassInfo;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static transient boolean __$stMC;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private transient MetaClass metaClass;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static SoftReference $callSiteArray;
+ 
+       @Generated
+@@ -282,7 +280,7 @@
+          this.metaClass = var2;
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public Object methodMissing(String name, Object args) {
+          CallSite[] var3 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.invokeMethodN(
+@@ -293,7 +291,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static Object $static_methodMissing(String name, Object args) {
+          CallSite[] var2 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.invokeMethodN(
+@@ -304,7 +302,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public void propertyMissing(String name, Object value) {
+          CallSite[] var3 = $getCallSiteArray();
+          ScriptBytecodeAdapter.setProperty(
+@@ -312,7 +310,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static void $static_propertyMissing(String name, Object value) {
+          CallSite[] var2 = $getCallSiteArray();
+          ScriptBytecodeAdapter.setProperty(
+@@ -320,7 +318,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public Object propertyMissing(String name) {
+          CallSite[] var2 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.getProperty(
+@@ -328,7 +326,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       public static Object $static_propertyMissing(String name) {
+          CallSite[] var1 = $getCallSiteArray();
+          return ScriptBytecodeAdapter.getProperty(
+@@ -336,7 +334,7 @@
+          );
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       protected MetaClass $getStaticMetaClass() {
+          if (this.getClass() != TestGroovyClass.Nested.class) {
+             return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -354,9 +352,8 @@
        @Internal
        @Transient
        public MetaClass getMetaClass() {
@@ -1908,30 +1730,233 @@ gen_diffs.py pkg/TestGroovyClass.java 1.8.0 1.10.0-20221220.042610-29
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
+@@ -369,13 +366,13 @@
+          this.metaClass = var1;
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSiteArray $createCallSiteArray() {
+          String[] var0 = new String[0];
+          return new CallSiteArray(TestGroovyClass.Nested.class, var0);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSite[] $getCallSiteArray() {
+          CallSiteArray var0;
+          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
+@@ -388,11 +385,11 @@
+    }
+ 
+    public final class _closure1 extends Closure implements GeneratedClosure {
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static ClassInfo $staticClassInfo;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static transient boolean __$stMC;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static SoftReference $callSiteArray;
+ 
+       public _closure1(Object _outerInstance, Object _thisObject) {
+@@ -411,7 +408,7 @@
+          return this.doCall(null);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       protected MetaClass $getStaticMetaClass() {
+          if (this.getClass() != TestGroovyClass._closure1.class) {
+             return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -425,19 +422,19 @@
+          }
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static void $createCallSiteArray_1(String[] var0) {
+          var0[0] = "println";
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSiteArray $createCallSiteArray() {
+          String[] var0 = new String[1];
+          $createCallSiteArray_1(var0);
+          return new CallSiteArray(TestGroovyClass._closure1.class, var0);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSite[] $getCallSiteArray() {
+          CallSiteArray var0;
+          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
+@@ -450,11 +447,11 @@
+    }
+ 
+    public final class _closure2 extends Closure implements GeneratedClosure {
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static ClassInfo $staticClassInfo;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static transient boolean __$stMC;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       private static SoftReference $callSiteArray;
+ 
+       public _closure2(Object _outerInstance, Object _thisObject) {
+@@ -473,7 +470,7 @@
+          return this.doCall(null);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       protected MetaClass $getStaticMetaClass() {
+          if (this.getClass() != TestGroovyClass._closure2.class) {
+             return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -487,13 +484,13 @@
+          }
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSiteArray $createCallSiteArray() {
+          String[] var0 = new String[0];
+          return new CallSiteArray(TestGroovyClass._closure2.class, var0);
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static CallSite[] $getCallSiteArray() {
+          CallSiteArray var0;
+          if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
 gen_diffs.py pkg/TestGroovyTrait$Trait$FieldHelper.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -1,6 +1,6 @@
+@@ -1,10 +1,10 @@
  package pkg;
  
 -// $FF: synthetic class
 +// $QF: synthetic class
  public interface TestGroovyTrait$Trait$FieldHelper {
-    Object pkg_TestGroovyTrait__myField$set(Object var1);
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    Object $0x0002pkg_TestGroovyTrait__myField;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    Object $ins$1pkg_TestGroovyTrait__myField;
  
+    Object pkg_TestGroovyTrait__myField$set(Object var1);
 gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -8,7 +8,7 @@
- import org.codehaus.groovy.runtime.ScriptBytecodeAdapter;
- import org.codehaus.groovy.runtime.callsite.CallSite;
+@@ -13,16 +13,16 @@
+ import org.codehaus.groovy.runtime.callsite.CallSiteArray;
+ import org.codehaus.groovy.runtime.typehandling.ShortTypeHandling;
  
 -// $FF: synthetic class
 +// $QF: synthetic class
  @Generated
  public abstract class TestGroovyTrait$Trait$Helper implements GroovyObject {
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static ClassInfo $staticClassInfo;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    public static transient boolean __$stMC;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private transient MetaClass metaClass;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static SoftReference $callSiteArray;
+ 
     @Generated
-@@ -38,9 +38,8 @@
+@@ -33,7 +33,7 @@
+       this.metaClass = var2;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public static void $init$(TestGroovyTrait $self) {
+       CallSite[] var1 = $getCallSiteArray();
+       var1[0]
+@@ -43,7 +43,7 @@
+          );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public static void $static$init$(Class<TestGroovyTrait> $static$self) {
+       CallSite[] var1 = $getCallSiteArray();
+    }
+@@ -63,7 +63,7 @@
+       var2[2].call((TestGroovyTrait$Trait$FieldHelper)ScriptBytecodeAdapter.castToType($self, TestGroovyTrait$Trait$FieldHelper.class), myField);
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public Object methodMissing(String name, Object args) {
+       CallSite[] var3 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.invokeMethodN(
+@@ -74,7 +74,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public static Object $static_methodMissing(String name, Object args) {
+       CallSite[] var2 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.invokeMethodN(
+@@ -85,7 +85,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public void propertyMissing(String name, Object value) {
+       CallSite[] var3 = $getCallSiteArray();
+       ScriptBytecodeAdapter.setProperty(
+@@ -93,7 +93,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public static void $static_propertyMissing(String name, Object value) {
+       CallSite[] var2 = $getCallSiteArray();
+       ScriptBytecodeAdapter.setProperty(
+@@ -101,7 +101,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public Object propertyMissing(String name) {
+       CallSite[] var2 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.getProperty(
+@@ -109,7 +109,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    public static Object $static_propertyMissing(String name) {
+       CallSite[] var1 = $getCallSiteArray();
+       return ScriptBytecodeAdapter.getProperty(
+@@ -117,7 +117,7 @@
+       );
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    protected MetaClass $getStaticMetaClass() {
+       if (this.getClass() != TestGroovyTrait$Trait$Helper.class) {
+          return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -135,9 +135,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {
@@ -1942,10 +1967,53 @@ gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.8.0 1.10.0-20221220.042610-
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
+@@ -150,21 +149,21 @@
+       this.metaClass = var1;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static void $createCallSiteArray_1(String[] var0) {
+       var0[0] = "pkg_TestGroovyTrait__myField$set";
+       var0[1] = "pkg_TestGroovyTrait__myField$get";
+       var0[2] = "pkg_TestGroovyTrait__myField$set";
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSiteArray $createCallSiteArray() {
+       String[] var0 = new String[3];
+       $createCallSiteArray_1(var0);
+       return new CallSiteArray(TestGroovyTrait$Trait$Helper.class, var0);
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSite[] $getCallSiteArray() {
+       CallSiteArray var0;
+       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
 gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -25,7 +25,6 @@
+@@ -12,13 +12,13 @@
+ import org.codehaus.groovy.runtime.callsite.CallSiteArray;
+ 
+ public class TestGroovyTryCatch implements GroovyObject {
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static ClassInfo $staticClassInfo;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    public static transient boolean __$stMC;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private transient MetaClass metaClass;
+-   // $FF: synthetic field
++   // $QF: synthetic field
+    private static SoftReference $callSiteArray;
+ 
+    @Generated
+@@ -38,7 +38,6 @@
           } catch (Exception var6) {
              var1[2].call(var1[3].callGetProperty(System.class), "Exception");
           }
@@ -1953,7 +2021,7 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.0 1.10.0-20221220.042610-29
        } finally {
           ;
        }
-@@ -42,7 +41,6 @@
+@@ -55,13 +54,12 @@
           } catch (Throwable var9) {
              var1[8].call(var1[9].callGetProperty(System.class), "Throwable");
           }
@@ -1961,7 +2029,14 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.0 1.10.0-20221220.042610-29
        } finally {
           ;
        }
-@@ -52,9 +50,8 @@
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    protected MetaClass $getStaticMetaClass() {
+       if (this.getClass() != TestGroovyTryCatch.class) {
+          return ScriptBytecodeAdapter.initMetaClass(this);
+@@ -79,9 +77,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {
@@ -1972,6 +2047,32 @@ gen_diffs.py pkg/TestGroovyTryCatch.java 1.8.0 1.10.0-20221220.042610-29
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
+@@ -94,7 +91,7 @@
+       this.metaClass = var1;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static void $createCallSiteArray_1(String[] var0) {
+       var0[0] = "println";
+       var0[1] = "out";
+@@ -108,14 +105,14 @@
+       var0[9] = "out";
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSiteArray $createCallSiteArray() {
+       String[] var0 = new String[10];
+       $createCallSiteArray_1(var0);
+       return new CallSiteArray(TestGroovyTryCatch.class, var0);
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static CallSite[] $getCallSiteArray() {
+       CallSiteArray var0;
+       if ($callSiteArray == null || (var0 = (CallSiteArray)$callSiteArray.get()) == null) {
 gen_diffs.py pkg/TestIfElseTernary1.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -3320,6 +3421,18 @@ gen_diffs.py pkg/TestIllegalMethodNames.java 1.8.0 1.10.0-20221220.042610-29
        return var1 <= this.()I();
     }
  
+gen_diffs.py pkg/TestImplicitlySealedEnum.java 1.8.0 1.10.0-20221220.042610-29
+--- 1.8.0
++++ 1.10.0-20221220.042610-29
+@@ -13,7 +13,7 @@
+       return 1;
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static TestImplicitlySealedEnum[] $values() {
+       return new TestImplicitlySealedEnum[]{A, B};
+    }
 gen_diffs.py pkg/TestInfiniteLoop.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -3486,19 +3599,7 @@ gen_diffs.py pkg/TestJADNaming.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestKotlinConstructorKt.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -15,9 +15,9 @@
- )
- public final class TestKotlinConstructorKt {
-    private static final List<Mapping> foo(Collection<String> list) {
--      Iterable $this$map$iv = (Iterable)list;
-+      Iterable $this$map$iv = list;
-       int $i$f$map = 0;
--      Collection destination$iv$iv = (Collection)(new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10)));
-+      Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-       int $i$f$mapTo = 0;
- 
-       for(Object item$iv$iv : $this$map$iv) {
-@@ -28,10 +28,10 @@
+@@ -28,7 +28,7 @@
              throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
           }
  
@@ -3507,11 +3608,6 @@ gen_diffs.py pkg/TestKotlinConstructorKt.java 1.8.0 1.10.0-20221220.042610-29
           destination$iv$iv.add(var10000);
        }
  
--      return CollectionsKt.toList((Iterable)((List)destination$iv$iv));
-+      return CollectionsKt.toList((List)destination$iv$iv);
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestKotlinEnumWhen.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -3548,7 +3644,7 @@ gen_diffs.py pkg/TestKotlinEnumWhen.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     public final void testConsecutiveMixed() {
-@@ -113,14 +110,13 @@
+@@ -113,32 +110,31 @@
           case THIRD:
              System.out.println("third!");
        }
@@ -3563,8 +3659,29 @@ gen_diffs.py pkg/TestKotlinEnumWhen.java 1.8.0 1.10.0-20221220.042610-29
 +   private static final DeprecationLevel testConsecutiveMixed$getLevel_0/* $QF was: testConsecutiveMixed$getLevel-0*/() {
        throw new Exception();
     }
- }
-\ No newline at end of file
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static final TestKotlinEnumWhen[] $values() {
+       return new TestKotlinEnumWhen[]{FIRST, SECOND, THIRD};
+    }
+ 
+-   // $FF: synthetic class
++   // $QF: synthetic class
+    @Metadata(
+       mv = {1, 6, 0},
+       k = 3,
+       xi = 48
+    )
+    public class WhenMappings {
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static final int[] $EnumSwitchMapping$0;
+-      // $FF: synthetic field
++      // $QF: synthetic field
+       public static final int[] $EnumSwitchMapping$1;
+ 
+       static {
 gen_diffs.py pkg/TestLabeledBreaks.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -3579,41 +3696,36 @@ gen_diffs.py pkg/TestLabeledBreaks.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestLambdaGenericCall.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -14,7 +14,7 @@
-    }
+@@ -8,7 +8,7 @@
  
-    public void test2(List<String> list, Map<String, Number[]> map) {
--      list.forEach(s -> System.out.println(((Number[])map.get(s))[0]));
-+      list.forEach(s -> System.out.println(map.get(s)[0]));
+    public void test(List<String> list, Map<String, Number[]> map) {
+       list.forEach(s -> {
+-         Number[] numbers = map.get(s);
++         Number[] numbers = (Number[])map.get(s);
+          System.out.println(numbers[0]);
+       });
     }
+@@ -19,7 +19,7 @@
  
     public void test(List<String> list) {
-gen_diffs.py pkg/TestLambdaQualified.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -8,8 +8,9 @@
-    private static Runnable r = new Runnable() {
-       private final Supplier<String> S_ = () -> TestLambdaQualified.STR;
- 
-+      @Override
-       public void run() {
--         System.out.println((String)this.S_.get());
-+         System.out.println(this.S_.get());
-       }
-    };
- 
-gen_diffs.py pkg/TestLocalRecord.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -17,7 +17,7 @@
-       record R() {
-       }
- 
--      List<R> list = new ArrayList();
-+      List<R> list = new ArrayList<>();
-       list.add(new R());
+       list.forEach(s -> {
+-         Number[] numbers = this.map.get(s);
++         Number[] numbers = (Number[])this.map.get(s);
+          System.out.println(numbers[0]);
+       });
     }
+gen_diffs.py pkg/TestLocalEnum.java 1.8.0 1.10.0-20221220.042610-29
+--- 1.8.0
++++ 1.10.0-20221220.042610-29
+@@ -6,7 +6,7 @@
+          VALID,
+          INVALID;
  
+-         // $FF: synthetic method
++         // $QF: synthetic method
+          private static Type[] $values() {
+             return new Type[]{VALID, INVALID};
+          }
 gen_diffs.py pkg/TestLocalScopeClash.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -3649,19 +3761,6 @@ gen_diffs.py pkg/TestLocalsNames.java 1.8.0 1.10.0-20221220.042610-29
           System.out.println("took " + elapsed + "ms (" + elapsed / (long)files.length + "ms per dir)");
        }
 -
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestLocalsSignature.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -5,7 +5,7 @@
- 
- public class TestLocalsSignature {
-    public static void main(String[] args) {
--      List<String> s = new ArrayList();
-+      List<String> s = new ArrayList<>();
-       s.add("xxx");
     }
  }
 \ No newline at end of file
@@ -4090,21 +4189,7 @@ gen_diffs.py pkg/TestLoopReturn.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestLVT.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -13,7 +13,7 @@
-       for(int i = 0; i < 10; ++i) {
-          String scope2 = "scope2";
-          String scope2a = "scope2a";
--         List<Object> noise = new ArrayList();
-+         List<Object> noise = new ArrayList<>();
-          String spam = scope1 + scope2 + scope2a + i + noise;
-          System.out.println(spam);
-       }
-@@ -21,11 +21,10 @@
-       for(long i = 0L; i < 10L; ++i) {
-          String scope2 = "scope2+1";
-          String scope2a = "scope2+1a";
--         Map<Object, Object> noise = new HashMap();
-+         Map<Object, Object> noise = new HashMap<>();
+@@ -25,7 +25,6 @@
           String spam = scope1a + scope2 + scope2a + i + noise;
           System.out.println(spam);
        }
@@ -4115,15 +4200,6 @@ gen_diffs.py pkg/TestLVT.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestLVTComplex.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -14,7 +14,7 @@
-          System.out.println("asdf");
-       }
- 
--      ArrayList<Object> x1 = new ArrayList();
-+      ArrayList<Object> x1 = new ArrayList<>();
- 
-       for(Object var18 : x1) {
-          ;
 @@ -76,7 +76,6 @@
                 }
              }
@@ -4149,48 +4225,6 @@ gen_diffs.py pkg/TestLVTScoping.java 1.8.0 1.10.0-20221220.042610-29
           System.out.println(a);
        }
 -
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestMethodHandles.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -12,32 +12,32 @@
-    public void test1() throws Throwable {
-       MethodHandle abs = LOOKUP.findStatic(Math.class, "abs", MethodType.methodType(Long.TYPE, Long.TYPE));
-       int a = -5;
--      long b = (long)abs.invokeExact((long)a);
-+      long b = (long)abs.invokeExact((long)((long)a));
-       System.out.println(b);
-    }
- 
-    public int test2() throws Throwable {
-       MethodHandle abs = LOOKUP.findStatic(Math.class, "abs", MethodType.methodType(Long.TYPE, Long.TYPE));
-       int a = -5;
--      return (int)(long)abs.invokeExact((long)a);
-+      return (int)(long)abs.invokeExact((long)((long)a));
-    }
- 
-    public void test3() throws Throwable {
-       MethodHandle abs = LOOKUP.findStatic(Math.class, "abs", MethodType.methodType(Long.TYPE, Long.TYPE));
-       int a = -5;
--      long b = (long)abs.invoke((long)a);
-+      long b = (long)abs.invoke((long)((long)a));
-       System.out.println(b);
-    }
- 
-    public int test4() throws Throwable {
-       MethodHandle abs = LOOKUP.findStatic(Math.class, "abs", MethodType.methodType(Long.TYPE, Long.TYPE));
-       int a = -5;
--      return (int)(long)abs.invoke((long)a);
-+      return (int)(long)abs.invoke((long)((long)a));
-    }
- 
-    public void test5() throws Throwable {
-       MethodHandle println = LOOKUP.findVirtual(PrintStream.class, "println", MethodType.methodType(Void.TYPE, Long.TYPE));
-       int a = -5;
--      println.invokeExact(System.out, (long)a);
-+      println.invokeExact((PrintStream)System.out, (long)((long)a));
     }
  }
 \ No newline at end of file
@@ -4305,7 +4339,7 @@ gen_diffs.py pkg/TestMultipleStaticBlocks.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -17,20 +17,20 @@
+@@ -17,26 +17,26 @@
     d2 = {"bar", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foo2", "quiltflower_testDataKotlin"}
  )
  public final class TestNamedSuspendFun2Kt {
@@ -4332,7 +4366,14 @@ gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.0 1.10.0-20221220.042610-29
              }
           }
  
-@@ -48,9 +48,9 @@
+          $continuation = new ContinuationImpl(var0) {
+             Object L$0;
+-            // $FF: synthetic field
++            // $QF: synthetic field
+             Object result;
+             int label;
+ 
+@@ -50,9 +50,9 @@
        }
  
        Object var4;
@@ -4344,12 +4385,7 @@ gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.0 1.10.0-20221220.042610-29
              Object $result = $continuation.result;
              var4 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
              switch($continuation.label) {
-@@ -60,22 +60,22 @@
-                case 1:
-                   try {
-                      ResultKt.throwOnFailure($result);
--                     var23 = $result;
-+                     var10000 = (Throwable)$result;
+@@ -66,18 +66,18 @@
                    } catch (Throwable var19) {
                       var10000 = var19;
                       boolean var10001 = false;
@@ -4358,8 +4394,7 @@ gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.0 1.10.0-20221220.042610-29
                    }
  
                    try {
--                     int x = ((Number)var23).intValue();
-+                     int x = ((Number)var10000).intValue();
+                      int x = ((Number)var10000).intValue();
                       if (x == 0) {
 -                        break label403;
 +                        break label279;
@@ -4372,59 +4407,18 @@ gen_diffs.py pkg/TestNamedSuspendFun2Kt.java 1.8.0 1.10.0-20221220.042610-29
                    }
  
                    $continuation.label = 3;
-@@ -100,21 +100,21 @@
-             while(true) {
+@@ -116,7 +116,7 @@
                 try {
-                   $continuation.label = 1;
--                  var24 = bar($continuation);
-+                  var10000 = (Throwable)bar($continuation);
-                } catch (Throwable var18) {
-                   var10000 = var18;
-                   boolean var26 = false;
-                   break;
-                }
- 
--               if (var24 == var4) {
-+               if (var10000 == var4) {
-                   return var4;
-                }
- 
-                try {
--                  int var22 = ((Number)var24).intValue();
-+                  int var22 = ((Number)var10000).intValue();
+                   int var22 = ((Number)var10000).intValue();
                    if (var22 == 0) {
 -                     break label403;
 +                     break label279;
                    }
                 } catch (Throwable var20) {
                    var10000 = var20;
-gen_diffs.py pkg/TestNestedAnonymousClass.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -5,9 +5,11 @@
- 
- public class TestNestedAnonymousClass {
-    public Runnable r = new TestNestedAnonymousClass.B() {
-+      @Override
-       public void run() {
-          ExecutorService ex = Executors.newFixedThreadPool(1);
-          ex.submit(new Runnable() {
-+            @Override
-             public void run() {
-                System.out.println("Hello");
-                b();
 gen_diffs.py pkg/TestNestedLoops.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -5,7 +5,7 @@
- 
- public class TestNestedLoops {
-    public void test() {
--      List<String> list = new ArrayList();
-+      List<String> list = new ArrayList<>();
-       int i = 0;
- 
-       while(true) {
 @@ -14,12 +14,9 @@
  
           for(String s : list) {
@@ -4440,15 +4434,7 @@ gen_diffs.py pkg/TestNestedLoops.java 1.8.0 1.10.0-20221220.042610-29
              }
           }
  
-@@ -28,19 +25,16 @@
-    }
- 
-    public void decomp() {
--      List<String> list = new ArrayList();
-+      List<String> list = new ArrayList<>();
-       int i = 0;
- 
-       while(true) {
+@@ -35,12 +32,9 @@
           if (i < 10) {
              for(String s : list) {
                 for(int j = 0; j < 20; ++j) {
@@ -4578,18 +4564,6 @@ gen_diffs.py pkg/TestNestedTernaryCondition.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestNoGenericDiamonds.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -4,7 +4,7 @@
-    private static TestNoGenericDiamonds.I<String> is;
- 
-    public void test(String s) {
--      this.method(new TestNoGenericDiamonds.Inner(is, s));
-+      this.method(new TestNoGenericDiamonds.Inner<>(is, s));
-    }
- 
-    private void method(TestNoGenericDiamonds.Inner<String> i) {
 gen_diffs.py pkg/TestNoUse.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -4626,17 +4600,6 @@ gen_diffs.py pkg/TestNoUse.java 1.8.0 1.10.0-20221220.042610-29
        int var4 = this.a[1]++;
        if (var1) {
           var4 = this.a[2]++;
-gen_diffs.py pkg/TestObjectArrays.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -24,6 +24,7 @@
-             this.hashcode = new Random().nextInt() + this.x;
-          }
- 
-+         @Override
-          public int hashCode() {
-             return this.hashcode;
-          }
 gen_diffs.py pkg/TestObjectPhi.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -4692,6 +4655,15 @@ gen_diffs.py pkg/TestOldECJInner.java 1.8.0 1.10.0-20221220.042610-29
        // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
        // java.lang.RuntimeException: Constructor pkg/TestOldECJInner.<init>(Lpkg/TestOldECJInner;Lpkg/TestOldECJInner$Inner;)V not found
        //  at org.jetbrains.java.decompiler.modules.decompiler.exps.ExprUtil.getSyntheticParametersMask(ExprUtil.java)
+@@ -41,7 +41,7 @@
+       private Inner() {
+       }
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       Inner(TestOldECJInner.Inner var2) {
+          this();
+       }
 gen_diffs.py pkg/TestPatternMatching.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -5539,131 +5511,6 @@ gen_diffs.py pkg/TestPPMMLoop.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestPrimitives.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -6,7 +6,7 @@
- public class TestPrimitives {
-    private void testInvalidUnboxing() {
-       List<Integer> lst = null;
--      lst.remove(0);
-+      lst.remove(Integer.valueOf(0));
-       this.genericBoxing((short)0);
-       int a = this.genericReturn(lst);
-       List<Byte> b = null;
-@@ -18,7 +18,7 @@
-    }
- 
-    private <T> T genericReturn(List<T> value) {
--      return (T)value.get(0);
-+      return value.get(0);
-    }
- 
-    private <T> void genericParameter(List<T> p, T v) {
-@@ -194,7 +194,7 @@
-    }
- 
-    void testCastRequired() {
--      HashMap<String, Byte> map = new HashMap();
-+      HashMap<String, Byte> map = new HashMap<>();
-       map.put("test", (byte)0);
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestPrivateClasses.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -2,6 +2,7 @@
- 
- class TestPrivateClasses {
-    private static final Runnable R1 = new Runnable() {
-+      @Override
-       public void run() {
-          final String s = "";
- 
-@@ -12,6 +13,7 @@
-                this.s = s;
-             }
- 
-+            @Override
-             public String toString() {
-                return this.s;
-             }
-@@ -26,6 +28,7 @@
-                this.i = i;
-             }
- 
-+            @Override
-             public String toString() {
-                return s + ":" + this.i;
-             }
-@@ -46,6 +49,7 @@
-       }
-    };
-    private final Runnable R2 = new Runnable() {
-+      @Override
-       public void run() {
-          final String s = "";
- 
-@@ -56,6 +60,7 @@
-                this.s = s;
-             }
- 
-+            @Override
-             public String toString() {
-                return this.s;
-             }
-@@ -70,6 +75,7 @@
-                this.i = i;
-             }
- 
-+            @Override
-             public String toString() {
-                return s + ":" + this.i;
-             }
-@@ -98,6 +104,7 @@
-             this.s = s;
-          }
- 
-+         @Override
-          public String toString() {
-             return this.s;
-          }
-@@ -112,6 +119,7 @@
-             this.i = i;
-          }
- 
-+         @Override
-          public String toString() {
-             return s + ":" + this.i;
-          }
-@@ -139,6 +147,7 @@
-             this.s = s;
-          }
- 
-+         @Override
-          public String toString() {
-             return this.s;
-          }
-@@ -153,6 +162,7 @@
-             this.i = i;
-          }
- 
-+         @Override
-          public String toString() {
-             return s + ":" + this.i;
-          }
-gen_diffs.py pkg/TestRecordEmpty.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -1,6 +1,7 @@
- package pkg;
- 
- public record TestRecordEmpty() {
-+   @Override
-    public int hashCode() {
-       return 0;
-    }
 gen_diffs.py pkg/TestRecordPattern1.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -5674,7 +5521,7 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.0 1.10.0-20221220.042610-29
  
  public class TestRecordPattern1 {
     void test(Object o) {
-@@ -9,94 +11,56 @@
+@@ -9,97 +11,59 @@
           int b = Integer.valueOf(var4);
           System.out.println(a + b);
        }
@@ -5807,7 +5654,20 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.0 1.10.0-20221220.042610-29
 +      }
     }
  
-    static record Point(int a, int b) {
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$a(TestRecordPattern1.Point arg0) {
+       try {
+          return arg0.a();
+@@ -108,7 +72,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$b(TestRecordPattern1.Point arg0) {
+       try {
+          return arg0.b();
 gen_diffs.py pkg/TestRecordPattern2.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -5818,7 +5678,7 @@ gen_diffs.py pkg/TestRecordPattern2.java 1.8.0 1.10.0-20221220.042610-29
  
  public class TestRecordPattern2 {
     void test(TestRecordPattern2.Pair<?, ?> p) {
-@@ -53,188 +55,74 @@
+@@ -53,191 +55,77 @@
        System.out.println("Unconditional");
     }
  
@@ -6074,18 +5934,152 @@ gen_diffs.py pkg/TestRecordPattern2.java 1.8.0 1.10.0-20221220.042610-29
 +      }
     }
  
-    static record Pair<A, B>(A a, B b) {
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$a(TestRecordPattern2.Pair arg0) {
+       try {
+          return arg0.a();
+@@ -246,7 +134,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$b(TestRecordPattern2.Pair arg0) {
+       try {
+          return arg0.b();
 gen_diffs.py pkg/TestRecordPattern3.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -32,7 +32,6 @@
+@@ -32,10 +32,9 @@
              System.out.println(a + var21 + var22 + ((double)((long)(i1 + i2 + i3 + i4) + l1 + l2 + (long)c1 + (long)c2 + (long)bb) + dd) + bool);
           }
        }
 -
     }
  
-    static record Bundle<A>(A a, String b, String c, int i1, int i2, int i3, int i4, long l1, long l2, char c1, char c2, byte bb, double dd, boolean bool) {
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$a(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.a();
+@@ -44,7 +43,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static String $proxy$b(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.b();
+@@ -53,7 +52,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static String $proxy$c(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.c();
+@@ -62,7 +61,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$i1(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.i1();
+@@ -71,7 +70,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$i2(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.i2();
+@@ -80,7 +79,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$i3(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.i3();
+@@ -89,7 +88,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static int $proxy$i4(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.i4();
+@@ -98,7 +97,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static long $proxy$l1(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.l1();
+@@ -107,7 +106,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static long $proxy$l2(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.l2();
+@@ -116,7 +115,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static char $proxy$c1(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.c1();
+@@ -125,7 +124,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static char $proxy$c2(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.c2();
+@@ -134,7 +133,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static byte $proxy$bb(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.bb();
+@@ -143,7 +142,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static double $proxy$dd(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.dd();
+@@ -152,7 +151,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static boolean $proxy$bool(TestRecordPattern3.Bundle arg0) {
+       try {
+          return arg0.bool();
 gen_diffs.py pkg/TestRecordPattern4.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -6106,14 +6100,90 @@ gen_diffs.py pkg/TestRecordPattern4.java 1.8.0 1.10.0-20221220.042610-29
                          }
                       }
                    }
-@@ -72,7 +71,6 @@
+@@ -72,10 +71,9 @@
              }
           }
        }
 -
     }
  
-    static record Many(Object a, Object b, Object c, Object d, Object e, Object f, Object g, Object h, Object i) {
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$a(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.a();
+@@ -84,7 +82,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$b(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.b();
+@@ -93,7 +91,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$c(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.c();
+@@ -102,7 +100,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$d(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.d();
+@@ -111,7 +109,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$e(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.e();
+@@ -120,7 +118,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$f(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.f();
+@@ -129,7 +127,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$g(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.g();
+@@ -138,7 +136,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$h(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.h();
+@@ -147,7 +145,7 @@
+       }
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $proxy$i(TestRecordPattern4.Many arg0) {
+       try {
+          return arg0.i();
 gen_diffs.py pkg/TestRecursiveLambda.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -6166,20 +6236,6 @@ gen_diffs.py pkg/TestSealedRecord.java 1.8.0 1.10.0-20221220.042610-29
  
 -public non-sealed record TestSealedRecord(int i) implements SealedInterface {
 +public record TestSealedRecord(int i) implements SealedInterface {
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestShadowing.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -1,6 +1,8 @@
- package pkg;
-+
-+import java.util.Calendar;
- 
- class TestShadowing extends TestShadowingSuperClass {
-    ext.Shadow.B instanceOfB = new ext.Shadow.B();
--   java.util.Calendar.Builder calBuilder = new java.util.Calendar.Builder();
-+   Calendar.Builder calBuilder = new Calendar.Builder();
  }
 \ No newline at end of file
 gen_diffs.py pkg/TestSharedVarIndex.java 1.8.0 1.10.0-20221220.042610-29
@@ -7251,6 +7307,15 @@ gen_diffs.py pkg/TestSwitchPatternMatching19.java 1.8.0 1.10.0-20221220.042610-2
        }
     }
  
+@@ -105,7 +72,7 @@
+       X2,
+       X3;
+ 
+-      // $FF: synthetic method
++      // $QF: synthetic method
+       private static TestSwitchPatternMatching19.XXX[] $values() {
+          return new TestSwitchPatternMatching19.XXX[]{X1, X2, X3};
+       }
 gen_diffs.py pkg/TestSwitchPatternMatching2.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -8722,29 +8787,6 @@ gen_diffs.py pkg/TestTernaryReturn.java 1.8.0 1.10.0-20221220.042610-29
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestTextTokens2.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -12,6 +12,6 @@
- 
-    public void bar(Supplier<Optional<? extends BiConsumer<T, String>>> r) {
-       String s = "Hello world";
--      ((Optional)r.get()).ifPresent(c -> c.accept(this.value, s));
-+      r.get().ifPresent(c -> c.accept(this.value, s));
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestThrowException.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -8,6 +8,7 @@
-          throw new IllegalArgumentException("xxx");
-       } else {
-          this.r = new Runnable() {
-+            @Override
-             public void run() {
-                int a = 5;
-             }
 gen_diffs.py pkg/TestThrowLoop.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -8808,15 +8850,7 @@ gen_diffs.py pkg/TestTryFinally.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestTryLoop.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -3,7 +3,6 @@
- import java.io.File;
- import java.io.FileNotFoundException;
- import java.nio.file.Files;
--import java.nio.file.LinkOption;
- import java.nio.file.Path;
- import java.util.Iterator;
- import java.util.Scanner;
-@@ -13,25 +12,20 @@
+@@ -12,17 +12,12 @@
     private boolean field;
  
     public void test(File file) {
@@ -8838,16 +8872,6 @@ gen_diffs.py pkg/TestTryLoop.java 1.8.0 1.10.0-20221220.042610-29
 +         var3.printStackTrace();
        }
     }
- 
-    public boolean hasNext(Path p, Iterator<File> f) {
-       while(true) {
-          try {
--            if (Files.exists(p, new LinkOption[0])) {
--               File a = (File)f.next();
-+            if (Files.exists(p)) {
-+               File a = f.next();
-                return true;
-             }
  
 gen_diffs.py pkg/TestTryLoopNoCatch.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
@@ -9221,147 +9245,23 @@ gen_diffs.py pkg/TestTryVarNoDebug.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestTryWithResources.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -9,135 +9,30 @@
- 
- public class TestTryWithResources {
-    public static void test1() {
--      try {
--         FileSystem fileSystem = FileSystems.getFileSystem(TestTryWithResources.class.getResource("NOT").toURI());
--         Throwable var1 = null;
--
--         try {
--            fileSystem.getPath("PATH", "TO", "FILE");
--         } catch (Throwable var11) {
--            var1 = var11;
--            throw var11;
--         } finally {
--            if (fileSystem != null) {
--               if (var1 != null) {
--                  try {
--                     fileSystem.close();
--                  } catch (Throwable var10) {
--                     var1.addSuppressed(var10);
--                  }
--               } else {
--                  fileSystem.close();
--               }
--            }
--
--         }
-+      try (FileSystem fileSystem = FileSystems.getFileSystem(TestTryWithResources.class.getResource("NOT").toURI())) {
-+         fileSystem.getPath("PATH", "TO", "FILE");
+@@ -13,7 +13,6 @@
+          fileSystem.getPath("PATH", "TO", "FILE");
        } catch (IOException | URISyntaxException var13) {
        }
 -
     }
  
     public static void test2() {
--      try {
-+      try (
-          FileSystem fileSystem = FileSystems.getFileSystem(TestTryWithResources.class.getResource("NOT").toURI());
--         Throwable var1 = null;
--
--         try {
--            InputStream stream = Files.newInputStream(fileSystem.getPath("PATH", "TO", "FILE"));
--            Throwable var3 = null;
--
--            try {
--               stream.read();
--            } catch (Throwable var28) {
--               var3 = var28;
--               throw var28;
--            } finally {
--               if (stream != null) {
--                  if (var3 != null) {
--                     try {
--                        stream.close();
--                     } catch (Throwable var27) {
--                        var3.addSuppressed(var27);
--                     }
--                  } else {
--                     stream.close();
--                  }
--               }
--
--            }
--         } catch (Throwable var30) {
--            var1 = var30;
--            throw var30;
--         } finally {
--            if (fileSystem != null) {
--               if (var1 != null) {
--                  try {
--                     fileSystem.close();
--                  } catch (Throwable var26) {
--                     var1.addSuppressed(var26);
--                  }
--               } else {
--                  fileSystem.close();
--               }
--            }
--
--         }
-+         InputStream stream = Files.newInputStream(fileSystem.getPath("PATH", "TO", "FILE"));
-+      ) {
-+         stream.read();
+@@ -24,7 +23,6 @@
+          stream.read();
        } catch (IOException | URISyntaxException var32) {
        }
 -
     }
  
     public static void test3() {
--      try {
--         FileSystem fileSystem = FileSystems.getFileSystem(TestTryWithResources.class.getResource("NOT").toURI());
--         Throwable var1 = null;
--
--         try {
--            try {
--               InputStream stream = Files.newInputStream(fileSystem.getPath("PATH", "TO", "FILE"));
--               Throwable var3 = null;
--
--               try {
--                  stream.read();
--               } catch (Throwable var32) {
--                  var3 = var32;
--                  throw var32;
--               } finally {
--                  if (stream != null) {
--                     if (var3 != null) {
--                        try {
--                           stream.close();
--                        } catch (Throwable var31) {
--                           var3.addSuppressed(var31);
--                        }
--                     } else {
--                        stream.close();
--                     }
--                  }
--
--               }
--            } catch (IOException var34) {
--            } catch (Exception var35) {
--            }
--         } catch (Throwable var36) {
--            var1 = var36;
--            throw var36;
--         } finally {
--            if (fileSystem != null) {
--               if (var1 != null) {
--                  try {
--                     fileSystem.close();
--                  } catch (Throwable var30) {
--                     var1.addSuppressed(var30);
--                  }
--               } else {
--                  fileSystem.close();
--               }
--            }
--
-+      try (FileSystem fileSystem = FileSystems.getFileSystem(TestTryWithResources.class.getResource("NOT").toURI())) {
-+         try (InputStream stream = Files.newInputStream(fileSystem.getPath("PATH", "TO", "FILE"))) {
-+            stream.read();
-+         } catch (IOException var34) {
-+         } catch (Exception var35) {
+@@ -36,6 +34,5 @@
           }
        } catch (IOException | URISyntaxException var38) {
        }
@@ -9372,38 +9272,15 @@ gen_diffs.py pkg/TestTryWithResources.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestTryWithResourcesAfterSwitch.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -13,35 +13,13 @@
+@@ -13,14 +13,13 @@
           switch(vvv25) {
              case "HYxSY":
              default:
 -               ElementType vvv25 = ElementType.METHOD;
 +               ElementType vvv25x = ElementType.METHOD;
  
--               try {
--                  Scanner vvv26 = new Scanner(System.in);
--                  Throwable var4 = null;
--
--                  try {
--                     System.out.println("hi");
--                  } catch (Throwable var20) {
--                     var4 = var20;
--                     throw var20;
--                  } finally {
--                     if (vvv26 != null) {
--                        if (var4 != null) {
--                           try {
--                              vvv26.close();
--                           } catch (Throwable var19) {
--                              var4.addSuppressed(var19);
--                           }
--                        } else {
--                           vvv26.close();
--                        }
--                     }
--
--                  }
-+               try (Scanner vvv26 = new Scanner(System.in)) {
-+                  System.out.println("hi");
+                try (Scanner vvv26 = new Scanner(System.in)) {
+                   System.out.println("hi");
                 } finally {
                    System.out.println("f");
                 }
@@ -9411,35 +9288,13 @@ gen_diffs.py pkg/TestTryWithResourcesAfterSwitch.java 1.8.0 1.10.0-20221220.0426
           }
        }
     }
-@@ -55,33 +33,11 @@
+@@ -34,12 +33,11 @@
           switch(vvv26) {
              case "HYxSY":
              default:
--               try {
--                  Scanner vvv26 = new Scanner(System.in);
--                  Throwable var23 = null;
--
--                  try {
--                     System.out.println("hi");
--                  } catch (Throwable var19) {
--                     var23 = var19;
--                     throw var19;
--                  } finally {
--                     if (vvv26 != null) {
--                        if (var23 != null) {
--                           try {
--                              vvv26.close();
--                           } catch (Throwable var18) {
--                              var23.addSuppressed(var18);
--                           }
--                        } else {
--                           vvv26.close();
--                        }
--                     }
--
--                  }
+-               try (Scanner vvv26 = new Scanner(System.in)) {
 +               try (Scanner vvv26x = new Scanner(System.in)) {
-+                  System.out.println("hi");
+                   System.out.println("hi");
                 } finally {
                    System.out.println("f");
                 }
@@ -9450,30 +9305,7 @@ gen_diffs.py pkg/TestTryWithResourcesAfterSwitch.java 1.8.0 1.10.0-20221220.0426
 gen_diffs.py pkg/TestTryWithResourcesCatchFinallyJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,57 +6,23 @@
- 
- public class TestTryWithResourcesCatchFinallyJ16 {
-    public void test(File file) {
--      try {
--         Scanner scanner = new Scanner(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var11) {
--            try {
--               scanner.close();
--            } catch (Throwable var10) {
--               var11.addSuppressed(var10);
--            }
--
--            throw var11;
--         }
--
--         scanner.close();
-+      try (Scanner scanner = new Scanner(file)) {
-+         scanner.next();
-       } catch (FileNotFoundException var12) {
-          var12.printStackTrace();
+@@ -13,7 +13,6 @@
        } finally {
           System.out.println("Hello");
        }
@@ -9481,30 +9313,7 @@ gen_diffs.py pkg/TestTryWithResourcesCatchFinallyJ16.java 1.8.0 1.10.0-20221220.
     }
  
     public void testFunc(File file) {
--      try {
--         Scanner scanner = this.create(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var11) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var10) {
--                  var11.addSuppressed(var10);
--               }
--            }
--
--            throw var11;
--         }
--
--         if (scanner != null) {
--            scanner.close();
--         }
-+      try (Scanner scanner = this.create(file)) {
-+         scanner.next();
-       } catch (FileNotFoundException var12) {
-          var12.printStackTrace();
+@@ -24,7 +23,6 @@
        } finally {
           System.out.println("Hello");
        }
@@ -9515,28 +9324,7 @@ gen_diffs.py pkg/TestTryWithResourcesCatchFinallyJ16.java 1.8.0 1.10.0-20221220.
 gen_diffs.py pkg/TestTryWithResourcesCatchJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,53 +6,19 @@
- 
- public class TestTryWithResourcesCatchJ16 {
-    public void test(File file) {
--      try {
--         Scanner scanner = new Scanner(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var6) {
--            try {
--               scanner.close();
--            } catch (Throwable var5) {
--               var6.addSuppressed(var5);
--            }
--
--            throw var6;
--         }
--
--         scanner.close();
-+      try (Scanner scanner = new Scanner(file)) {
-+         scanner.next();
+@@ -11,7 +11,6 @@
        } catch (FileNotFoundException var7) {
           var7.printStackTrace();
        }
@@ -9544,28 +9332,7 @@ gen_diffs.py pkg/TestTryWithResourcesCatchJ16.java 1.8.0 1.10.0-20221220.042610-
     }
  
     public void testFunc(File file) {
--      try {
--         Scanner scanner = this.create(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var6) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var5) {
--                  var6.addSuppressed(var5);
--               }
--            }
--
--            throw var6;
--         }
--
--         if (scanner != null) {
--            scanner.close();
--         }
-+      try (Scanner scanner = this.create(file)) {
-+         scanner.next();
+@@ -20,7 +19,6 @@
        } catch (FileNotFoundException var7) {
           var7.printStackTrace();
        }
@@ -9573,59 +9340,15 @@ gen_diffs.py pkg/TestTryWithResourcesCatchJ16.java 1.8.0 1.10.0-20221220.042610-
     }
  
     public int test1(File file) {
-@@ -60,43 +26,13 @@
- 
-       try {
-          System.out.println(-1);
--         Scanner scanner = this.create(file);
- 
--         try {
-+         try (
-+            Scanner scanner = this.create(file);
-             Scanner scanner2 = this.create(file);
--
--            try {
--               scanner.next();
--               ++i;
--            } catch (Throwable var9) {
--               if (scanner2 != null) {
--                  try {
--                     scanner2.close();
--                  } catch (Throwable var8) {
--                     var9.addSuppressed(var8);
--                  }
--               }
--
--               throw var9;
--            }
--
--            if (scanner2 != null) {
--               scanner2.close();
--            }
--         } catch (Throwable var10) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var7) {
--                  var10.addSuppressed(var7);
--               }
--            }
--
--            throw var10;
--         }
--
--         if (scanner != null) {
--            scanner.close();
-+         ) {
-+            scanner.next();
-+            ++i;
-          }
-       } catch (Exception var11) {
-          System.out.println(1);
 gen_diffs.py pkg/TestTryWithResourcesFakeTrigger.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -7,68 +7,35 @@
+@@ -2,83 +2,71 @@
+ 
+ import java.io.File;
+ import java.io.FileNotFoundException;
++import java.util.NoSuchElementException;
+ import java.util.Scanner;
  
  public class TestTryWithResourcesFakeTrigger {
     public void testTrigger1() {
@@ -9720,31 +9443,44 @@ gen_diffs.py pkg/TestTryWithResourcesFakeTrigger.java 1.8.0 1.10.0-20221220.0426
     }
  
     public void testTrigger3(File file) throws FileNotFoundException {
+-      try (Scanner scanner = new Scanner(file)) {
++      Scanner scanner = new Scanner(file);
++
++      try {
+          scanner.next();
++      } catch (NoSuchElementException var6) {
++         try {
++            scanner.close();
++         } catch (IllegalStateException var5) {
++            var6.addSuppressed(var5);
++         }
++
++         throw var6;
+       }
+    }
+ 
+    public void testTrigger4(File file) throws FileNotFoundException {
+-      try (Scanner scanner = new Scanner(file)) {
++      Scanner scanner = new Scanner(file);
++
++      try {
+          scanner.next();
++      } catch (Throwable var6) {
++         try {
++            scanner.close();
++         } catch (Throwable var5) {
++            var6.addSuppressed(var5);
++         }
++
++         throw var6;
+       }
+    }
+ }
+\ No newline at end of file
 gen_diffs.py pkg/TestTryWithResourcesFinallyJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,53 +6,19 @@
- 
- public class TestTryWithResourcesFinallyJ16 {
-    public void test(File file) throws FileNotFoundException {
--      try {
--         Scanner scanner = new Scanner(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var10) {
--            try {
--               scanner.close();
--            } catch (Throwable var9) {
--               var10.addSuppressed(var9);
--            }
--
--            throw var10;
--         }
--
--         scanner.close();
-+      try (Scanner scanner = new Scanner(file)) {
-+         scanner.next();
+@@ -11,7 +11,6 @@
        } finally {
           System.out.println("Hello");
        }
@@ -9752,28 +9488,7 @@ gen_diffs.py pkg/TestTryWithResourcesFinallyJ16.java 1.8.0 1.10.0-20221220.04261
     }
  
     public void testFunc(File file) throws FileNotFoundException {
--      try {
--         Scanner scanner = this.create(file);
--
--         try {
--            scanner.next();
--         } catch (Throwable var10) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var9) {
--                  var10.addSuppressed(var9);
--               }
--            }
--
--            throw var10;
--         }
--
--         if (scanner != null) {
--            scanner.close();
--         }
-+      try (Scanner scanner = this.create(file)) {
-+         scanner.next();
+@@ -20,7 +19,6 @@
        } finally {
           System.out.println("Hello");
        }
@@ -9784,49 +9499,17 @@ gen_diffs.py pkg/TestTryWithResourcesFinallyJ16.java 1.8.0 1.10.0-20221220.04261
 gen_diffs.py pkg/TestTryWithResourcesJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,44 +6,15 @@
- 
- public class TestTryWithResourcesJ16 {
-    public void test(File file) throws FileNotFoundException {
--      Scanner scanner = new Scanner(file);
--
--      try {
-+      try (Scanner scanner = new Scanner(file)) {
+@@ -9,14 +9,12 @@
+       try (Scanner scanner = new Scanner(file)) {
           scanner.next();
--      } catch (Throwable var6) {
--         try {
--            scanner.close();
--         } catch (Throwable var5) {
--            var6.addSuppressed(var5);
--         }
--
--         throw var6;
        }
 -
--      scanner.close();
     }
  
     public void testFunc(File file) throws FileNotFoundException {
--      Scanner scanner = this.create(file);
--
--      try {
-+      try (Scanner scanner = this.create(file)) {
+       try (Scanner scanner = this.create(file)) {
           scanner.next();
--      } catch (Throwable var6) {
--         if (scanner != null) {
--            try {
--               scanner.close();
--            } catch (Throwable var5) {
--               var6.addSuppressed(var5);
--            }
--         }
--
--         throw var6;
        }
--
--      if (scanner != null) {
--         scanner.close();
--      }
 -
     }
  
@@ -9834,238 +9517,23 @@ gen_diffs.py pkg/TestTryWithResourcesJ16.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestTryWithResourcesLoopJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -7,35 +7,11 @@
- public class TestTryWithResourcesLoopJ16 {
-    public void test(File f) throws FileNotFoundException {
-       while(true) {
--         Scanner s = this.create(f);
--
--         label41: {
--            try {
--               if (!s.hasNext()) {
--                  break label41;
--               }
--
-+         try (Scanner s = this.create(f)) {
-+            if (s.hasNext()) {
-                s.next();
--            } catch (Throwable var6) {
--               if (s != null) {
--                  try {
--                     s.close();
--                  } catch (Throwable var5) {
--                     var6.addSuppressed(var5);
--                  }
--               }
--
--               throw var6;
-+               continue;
-             }
--
--            if (s != null) {
--               s.close();
--            }
--            continue;
--         }
--
--         if (s != null) {
--            s.close();
-          }
- 
-          return;
-@@ -44,240 +20,62 @@
- 
-    public void test1(File f) throws FileNotFoundException {
-       while(f.exists()) {
--         Scanner s = this.create(f);
--
--         label40: {
--            try {
--               if (s.hasNext()) {
--                  s.next();
--                  break label40;
--               }
--            } catch (Throwable var6) {
--               if (s != null) {
--                  try {
--                     s.close();
--                  } catch (Throwable var5) {
--                     var6.addSuppressed(var5);
--                  }
--               }
--
--               throw var6;
--            }
--
--            if (s != null) {
--               s.close();
-+         try (Scanner s = this.create(f)) {
-+            if (s.hasNext()) {
-+               s.next();
-+               continue;
-             }
+@@ -28,7 +28,6 @@
              break;
           }
--
--         if (s != null) {
--            s.close();
--         }
        }
 -
     }
  
     public void test2(File f) throws FileNotFoundException {
-       while(f.exists()) {
--         Scanner s = this.create(f);
--
--         label67: {
--            try {
--               Scanner s2 = this.create(f);
--
--               label74: {
--                  try {
--                     if (!s.hasNext()) {
--                        break label74;
--                     }
--
--                     s.next();
--                  } catch (Throwable var8) {
--                     if (s2 != null) {
--                        try {
--                           s2.close();
--                        } catch (Throwable var7) {
--                           var8.addSuppressed(var7);
--                        }
--                     }
--
--                     throw var8;
--                  }
--
--                  if (s2 != null) {
--                     s2.close();
--                  }
--                  break label67;
--               }
--
--               if (s2 != null) {
--                  s2.close();
--               }
--            } catch (Throwable var9) {
--               if (s != null) {
--                  try {
--                     s.close();
--                  } catch (Throwable var6) {
--                     var9.addSuppressed(var6);
--                  }
--               }
--
--               throw var9;
-+         try (
-+            Scanner s = this.create(f);
-+            Scanner s2 = this.create(f);
-+         ) {
-+            if (!s.hasNext()) {
-+               break;
-             }
- 
--            if (s != null) {
--               s.close();
--            }
--            break;
--         }
--
--         if (s != null) {
--            s.close();
-+            s.next();
+@@ -44,7 +43,6 @@
+             s.next();
           }
        }
 -
     }
  
     public void test3(File f) throws FileNotFoundException {
-       while(f.exists()) {
--         Scanner s = this.create(f);
--
--         label91: {
--            label84: {
--               try {
--                  Scanner s2;
--                  label93: {
--                     s2 = this.create(f);
--
--                     label94: {
--                        try {
--                           if (!s.hasNext()) {
--                              break label93;
--                           }
--
--                           if (s2.hasNext()) {
--                              break label94;
--                           }
--
--                           s.next();
--                        } catch (Throwable var8) {
--                           if (s2 != null) {
--                              try {
--                                 s2.close();
--                              } catch (Throwable var7) {
--                                 var8.addSuppressed(var7);
--                              }
--                           }
--
--                           throw var8;
--                        }
--
--                        if (s2 != null) {
--                           s2.close();
--                        }
--                        break label84;
--                     }
--
--                     if (s2 != null) {
--                        s2.close();
--                     }
--                     break label91;
--                  }
--
--                  if (s2 != null) {
--                     s2.close();
--                  }
--               } catch (Throwable var9) {
--                  if (s != null) {
--                     try {
--                        s.close();
--                     } catch (Throwable var6) {
--                        var9.addSuppressed(var6);
--                     }
--                  }
--
--                  throw var9;
--               }
--
--               if (s != null) {
--                  s.close();
--               }
-+         try (
-+            Scanner s = this.create(f);
-+            Scanner s2 = this.create(f);
-+         ) {
-+            if (!s.hasNext()) {
-                break;
-             }
- 
--            if (s != null) {
--               s.close();
-+            if (!s2.hasNext()) {
-+               s.next();
-+               continue;
-             }
--            continue;
--         }
--
--         if (s != null) {
--            s.close();
-          }
+@@ -65,7 +63,6 @@
  
           return;
        }
@@ -10073,66 +9541,8 @@ gen_diffs.py pkg/TestTryWithResourcesLoopJ16.java 1.8.0 1.10.0-20221220.042610-2
     }
  
     public void test4(File f) throws FileNotFoundException {
-       while(f.exists()) {
--         Scanner s = this.create(f);
--
--         label74: {
--            try {
--               Scanner s2 = this.create(f);
--
--               label76: {
--                  try {
--                     if (s.hasNext()) {
--                        s.next();
--                        break label76;
--                     }
--                  } catch (Throwable var8) {
--                     if (s2 != null) {
--                        try {
--                           s2.close();
--                        } catch (Throwable var7) {
--                           var8.addSuppressed(var7);
--                        }
--                     }
--
--                     throw var8;
--                  }
--
--                  if (s2 != null) {
--                     s2.close();
--                  }
--                  break label74;
--               }
--
--               if (s2 != null) {
--                  s2.close();
--               }
--            } catch (Throwable var9) {
--               if (s != null) {
--                  try {
--                     s.close();
--                  } catch (Throwable var6) {
--                     var9.addSuppressed(var6);
--                  }
--               }
--
--               throw var9;
-+         try (
-+            Scanner s = this.create(f);
-+            Scanner s2 = this.create(f);
-+         ) {
-+            if (s.hasNext()) {
-+               s.next();
+@@ -79,7 +76,6 @@
              }
--
--            if (s != null) {
--               s.close();
--            }
--            continue;
--         }
--
--         if (s != null) {
--            s.close();
           }
        }
 -
@@ -10142,105 +9552,32 @@ gen_diffs.py pkg/TestTryWithResourcesLoopJ16.java 1.8.0 1.10.0-20221220.042610-2
 gen_diffs.py pkg/TestTryWithResourcesManyJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,80 +6,18 @@
- 
- public class TestTryWithResourcesManyJ16 {
-    public void test(File f) throws FileNotFoundException {
--      Scanner s1 = new Scanner(f);
--
--      try {
-+      try (
-+         Scanner s1 = new Scanner(f);
-          Scanner s2 = new Scanner(f);
--
--         try {
--            Scanner s3 = new Scanner(f);
--
--            try {
--               Scanner s4 = new Scanner(f);
--
--               try {
--                  Scanner s5 = new Scanner(f);
--
--                  try {
--                     System.out.println(s1.nextLine());
--                     System.out.println(s2.nextLine());
--                     System.out.println(s3.nextLine());
--                     System.out.println(s4.nextLine());
--                     System.out.println(s5.nextLine());
--                  } catch (Throwable var14) {
--                     try {
--                        s5.close();
--                     } catch (Throwable var13) {
--                        var14.addSuppressed(var13);
--                     }
--
--                     throw var14;
--                  }
--
--                  s5.close();
--               } catch (Throwable var15) {
--                  try {
--                     s4.close();
--                  } catch (Throwable var12) {
--                     var15.addSuppressed(var12);
--                  }
--
--                  throw var15;
--               }
--
--               s4.close();
--            } catch (Throwable var16) {
--               try {
--                  s3.close();
--               } catch (Throwable var11) {
--                  var16.addSuppressed(var11);
--               }
--
--               throw var16;
--            }
--
--            s3.close();
--         } catch (Throwable var17) {
--            try {
--               s2.close();
--            } catch (Throwable var10) {
--               var17.addSuppressed(var10);
--            }
--
--            throw var17;
--         }
--
--         s2.close();
--      } catch (Throwable var18) {
--         try {
--            s1.close();
--         } catch (Throwable var9) {
--            var18.addSuppressed(var9);
--         }
--
--         throw var18;
-+         Scanner s3 = new Scanner(f);
-+         Scanner s4 = new Scanner(f);
-+         Scanner s5 = new Scanner(f);
-+      ) {
-+         System.out.println(s1.nextLine());
-+         System.out.println(s2.nextLine());
-+         System.out.println(s3.nextLine());
-+         System.out.println(s4.nextLine());
-+         System.out.println(s5.nextLine());
+@@ -19,6 +19,5 @@
+          System.out.println(s4.nextLine());
+          System.out.println(s5.nextLine());
        }
 -
--      s1.close();
     }
  }
 \ No newline at end of file
 gen_diffs.py pkg/TestTryWithResourcesManyJ9.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -61,6 +61,5 @@
+@@ -61,10 +61,9 @@
        } finally {
           $closeResource(var3, s1);
+       }
+-
+    }
+ 
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static void $closeResource(Throwable x0, AutoCloseable x1) {
+       if (x0 != null) {
+          try {
+@@ -75,6 +74,5 @@
+       } else {
+          x1.close();
        }
 -
     }
@@ -10249,201 +9586,26 @@ gen_diffs.py pkg/TestTryWithResourcesManyJ9.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestTryWithResourcesMultiJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -7,35 +7,12 @@
- 
- public class TestTryWithResourcesMultiJ16 {
-    public void testMulti(File file) throws IOException {
--      Scanner scanner = new Scanner(file);
--
--      try {
-+      try (
-+         Scanner scanner = new Scanner(file);
-          FileWriter writer = new FileWriter(file);
--
--         try {
--            scanner.next();
--            writer.write("hello");
--         } catch (Throwable var8) {
--            try {
--               writer.close();
--            } catch (Throwable var7) {
--               var8.addSuppressed(var7);
--            }
--
--            throw var8;
--         }
--
--         writer.close();
--      } catch (Throwable var9) {
--         try {
--            scanner.close();
--         } catch (Throwable var6) {
--            var9.addSuppressed(var6);
--         }
--
--         throw var9;
-+      ) {
-+         scanner.next();
-+         writer.write("hello");
+@@ -14,6 +14,5 @@
+          scanner.next();
+          writer.write("hello");
        }
 -
--      scanner.close();
     }
  }
 \ No newline at end of file
 gen_diffs.py pkg/TestTryWithResourcesNestedJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,139 +6,33 @@
- 
- public class TestTryWithResourcesNestedJ16 {
-    public void testNested(File file) throws IOException {
--      Scanner scanner = new Scanner(file);
--
--      try {
-+      try (
-+         Scanner scanner = new Scanner(file);
-          Scanner scanner1 = new Scanner(file);
--
--         try {
--            Scanner scanner2 = new Scanner(file);
--
--            try {
--               Scanner scanner3 = new Scanner(file);
--
--               try {
--                  scanner.next();
--               } catch (Throwable var12) {
--                  try {
--                     scanner3.close();
--                  } catch (Throwable var11) {
--                     var12.addSuppressed(var11);
--                  }
--
--                  throw var12;
--               }
--
--               scanner3.close();
--            } catch (Throwable var13) {
--               try {
--                  scanner2.close();
--               } catch (Throwable var10) {
--                  var13.addSuppressed(var10);
--               }
--
--               throw var13;
--            }
--
--            scanner2.close();
--         } catch (Throwable var14) {
--            try {
--               scanner1.close();
--            } catch (Throwable var9) {
--               var14.addSuppressed(var9);
--            }
--
--            throw var14;
--         }
--
--         scanner1.close();
--      } catch (Throwable var15) {
--         try {
--            scanner.close();
--         } catch (Throwable var8) {
--            var15.addSuppressed(var8);
--         }
--
--         throw var15;
-+         Scanner scanner2 = new Scanner(file);
-+         Scanner scanner3 = new Scanner(file);
-+      ) {
-+         scanner.next();
+@@ -14,7 +14,6 @@
+       ) {
+          scanner.next();
        }
 -
--      scanner.close();
     }
  
     public void testNestedFinally(File file) throws IOException {
--      try {
--         Scanner scanner = new Scanner(file);
--
--         try {
--            try {
--               Scanner scanner1 = new Scanner(file);
--
--               try {
--                  try {
--                     Scanner scanner2 = new Scanner(file);
--
--                     try {
--                        try {
--                           Scanner scanner3 = new Scanner(file);
--
--                           try {
--                              scanner.next();
--                           } catch (Throwable var64) {
--                              try {
--                                 scanner3.close();
--                              } catch (Throwable var63) {
--                                 var64.addSuppressed(var63);
--                              }
--
--                              throw var64;
--                           }
--
--                           scanner3.close();
--                        } finally {
--                           System.out.println(4);
--                        }
--                     } catch (Throwable var66) {
--                        try {
--                           scanner2.close();
--                        } catch (Throwable var62) {
--                           var66.addSuppressed(var62);
--                        }
--
--                        throw var66;
--                     }
--
--                     scanner2.close();
--                  } finally {
--                     System.out.println(3);
--                  }
--               } catch (Throwable var68) {
--                  try {
--                     scanner1.close();
--                  } catch (Throwable var61) {
--                     var68.addSuppressed(var61);
--                  }
--
--                  throw var68;
-+      try (Scanner scanner = new Scanner(file)) {
-+         try (Scanner scanner1 = new Scanner(file)) {
-+            try (Scanner scanner2 = new Scanner(file)) {
-+               try (Scanner scanner3 = new Scanner(file)) {
-+                  scanner.next();
-+               } finally {
-+                  System.out.println(4);
-                }
--
--               scanner1.close();
-             } finally {
--               System.out.println(2);
-+               System.out.println(3);
-             }
--         } catch (Throwable var70) {
--            try {
--               scanner.close();
--            } catch (Throwable var60) {
--               var70.addSuppressed(var60);
--            }
--
--            throw var70;
-+         } finally {
-+            System.out.println(2);
-          }
--
--         scanner.close();
+@@ -35,6 +34,5 @@
        } finally {
           System.out.println(1);
        }
@@ -10451,237 +9613,29 @@ gen_diffs.py pkg/TestTryWithResourcesNestedJ16.java 1.8.0 1.10.0-20221220.042610
     }
  }
 \ No newline at end of file
-gen_diffs.py pkg/TestTryWithResourcesNestedLoop.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -8,91 +8,29 @@
- 
- public class TestTryWithResourcesNestedLoop {
-    public static InputStream test(Path base, Path overlay, int width, int left, int top, int right, int bottom) throws IOException {
--      InputStream lv = Files.newInputStream(base);
-+      try (
-+         InputStream lv = Files.newInputStream(base);
-+         InputStream lv2 = Files.newInputStream(overlay);
-+      ) {
-+         int n = lv.available();
-+         int o = lv.read();
-+         if (n == lv2.available() && o == lv2.read()) {
-+            try (ByteArrayInputStream lv3 = new ByteArrayInputStream(new byte[0], n, o)) {
-+               int p = n / width;
- 
--      ByteArrayInputStream var23;
--      label105: {
--         try {
--            InputStream lv2;
--            label107: {
--               lv2 = Files.newInputStream(overlay);
--
--               try {
--                  int n = lv.available();
--                  int o = lv.read();
--                  if (n != lv2.available() || o != lv2.read()) {
--                     break label107;
-+               for(int q = top * p; q < bottom * p; ++q) {
-+                  for(int r = left * p; r < right * p; ++r) {
-+                     int s = lv2.read(new byte[0], r, q);
-+                     int t = lv.read(new byte[0], r, q);
-+                     lv3.read(new byte[0], r, q);
-                   }
--
--                  ByteArrayInputStream lv3 = new ByteArrayInputStream(new byte[0], n, o);
--
--                  try {
--                     int p = n / width;
--
--                     for(int q = top * p; q < bottom * p; ++q) {
--                        for(int r = left * p; r < right * p; ++r) {
--                           int s = lv2.read(new byte[0], r, q);
--                           int t = lv.read(new byte[0], r, q);
--                           lv3.read(new byte[0], r, q);
--                        }
--                     }
--
--                     var23 = new ByteArrayInputStream(lv3.readAllBytes());
--                  } catch (Throwable var20) {
--                     try {
--                        lv3.close();
--                     } catch (Throwable var19) {
--                        var20.addSuppressed(var19);
--                     }
--
--                     throw var20;
--                  }
--
--                  lv3.close();
--               } catch (Throwable var21) {
--                  if (lv2 != null) {
--                     try {
--                        lv2.close();
--                     } catch (Throwable var18) {
--                        var21.addSuppressed(var18);
--                     }
--                  }
--
--                  throw var21;
-                }
- 
--               if (lv2 != null) {
--                  lv2.close();
--               }
--               break label105;
-+               return new ByteArrayInputStream(lv3.readAllBytes());
-             }
--
--            if (lv2 != null) {
--               lv2.close();
--            }
--         } catch (Throwable var22) {
--            if (lv != null) {
--               try {
--                  lv.close();
--               } catch (Throwable var17) {
--                  var22.addSuppressed(var17);
--               }
--            }
--
--            throw var22;
-          }
--
--         if (lv != null) {
--            lv.close();
--         }
--
--         return null;
-       }
- 
--      if (lv != null) {
--         lv.close();
--      }
--
--      return var23;
-+      return null;
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestTryWithResourcesNullJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,109 +6,28 @@
- 
- public class TestTryWithResourcesNullJ16 {
-    public void test(File file) throws FileNotFoundException {
--      Scanner scanner = null;
--
--      try {
-+      try (Scanner scanner = null) {
+@@ -9,7 +9,6 @@
+       try (Scanner scanner = null) {
           scanner.next();
--      } catch (Throwable var6) {
--         if (scanner != null) {
--            try {
--               scanner.close();
--            } catch (Throwable var5) {
--               var6.addSuppressed(var5);
--            }
--         }
--
--         throw var6;
        }
--
--      if (scanner != null) {
--         scanner.close();
--      }
 -
     }
  
     public void testNested(File file) {
--      Scanner scanner = null;
-+      try (Scanner scanner = null) {
-+         scanner.next();
- 
--      try {
--         scanner.next();
--         Scanner scanner2 = null;
--
--         try {
-+         try (Scanner scanner2 = null) {
+@@ -20,7 +19,6 @@
              scanner2.next();
--         } catch (Throwable var8) {
--            if (scanner2 != null) {
--               try {
--                  scanner2.close();
--               } catch (Throwable var7) {
--                  var8.addSuppressed(var7);
--               }
--            }
--
--            throw var8;
           }
--
--         if (scanner2 != null) {
--            scanner2.close();
--         }
--      } catch (Throwable var9) {
--         if (scanner != null) {
--            try {
--               scanner.close();
--            } catch (Throwable var6) {
--               var9.addSuppressed(var6);
--            }
--         }
--
--         throw var9;
        }
--
--      if (scanner != null) {
--         scanner.close();
--      }
 -
     }
  
     public void testMulti(File file) {
--      Scanner scanner = null;
--
--      try {
-+      try (
-+         Scanner scanner = null;
-          Scanner scanner2 = null;
--
--         try {
--            scanner.next();
--            scanner2.next();
--         } catch (Throwable var8) {
--            if (scanner2 != null) {
--               try {
--                  scanner2.close();
--               } catch (Throwable var7) {
--                  var8.addSuppressed(var7);
--               }
--            }
--
--            throw var8;
--         }
--
--         if (scanner2 != null) {
--            scanner2.close();
--         }
--      } catch (Throwable var9) {
--         if (scanner != null) {
--            try {
--               scanner.close();
--            } catch (Throwable var6) {
--               var9.addSuppressed(var6);
--            }
--         }
--
--         throw var9;
-+      ) {
-+         scanner.next();
-+         scanner2.next();
+@@ -31,6 +29,5 @@
+          scanner.next();
+          scanner2.next();
        }
--
--      if (scanner != null) {
--         scanner.close();
--      }
 -
     }
  }
@@ -10745,7 +9699,7 @@ gen_diffs.py pkg/TestTryWithResourcesOuterJ16.java 1.8.0 1.10.0-20221220.042610-
     }
  
     public void testSame3(File file) throws FileNotFoundException {
-@@ -313,13 +306,10 @@
+@@ -313,7 +306,6 @@
        if (scanner != null) {
           scanner.close();
        }
@@ -10753,107 +9707,18 @@ gen_diffs.py pkg/TestTryWithResourcesOuterJ16.java 1.8.0 1.10.0-20221220.042610-
     }
  
     public void testSame4(File file) throws FileNotFoundException {
--      Scanner scanner = new Scanner(file);
--
--      try {
-+      try (Scanner scanner = new Scanner(file)) {
-          Scanner var3 = scanner;
- 
-          try {
-@@ -339,17 +329,7 @@
-          if (scanner != null) {
+@@ -338,7 +330,6 @@
              scanner.close();
           }
--      } catch (Throwable var9) {
--         try {
--            scanner.close();
--         } catch (Throwable var6) {
--            var9.addSuppressed(var6);
--         }
+       }
 -
--         throw var9;
--      }
--
--      scanner.close();
-+      }
     }
  
     private Scanner create(File file) throws FileNotFoundException {
 gen_diffs.py pkg/TestTryWithResourcesReturnJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,45 +6,18 @@
- 
- public class TestTryWithResourcesReturnJ16 {
-    public Scanner test(File file) throws FileNotFoundException {
--      Scanner scanner = new Scanner(file);
--
-       Scanner var3;
--      try {
-+      try (Scanner scanner = new Scanner(file)) {
-          var3 = scanner;
--      } catch (Throwable var6) {
--         try {
--            scanner.close();
--         } catch (Throwable var5) {
--            var6.addSuppressed(var5);
--         }
--
--         throw var6;
-       }
- 
--      scanner.close();
-       return var3;
-    }
- 
-    public Scanner testFunc(File file) throws FileNotFoundException {
--      Scanner scanner = this.create(file);
--
-       Scanner var3;
--      try {
-+      try (Scanner scanner = this.create(file)) {
-          var3 = scanner;
--      } catch (Throwable var6) {
--         if (scanner != null) {
--            try {
--               scanner.close();
--            } catch (Throwable var5) {
--               var6.addSuppressed(var5);
--            }
--         }
--
--         throw var6;
--      }
--
--      if (scanner != null) {
--         scanner.close();
-       }
- 
-       return var3;
-@@ -52,21 +25,10 @@
- 
-    public Scanner testFinally(File file) {
-       try {
--         Scanner scanner = new Scanner(file);
--
--         try {
-+         try (Scanner scanner = new Scanner(file)) {
-             ;
--         } catch (Throwable var10) {
--            try {
--               scanner.close();
--            } catch (Throwable var9) {
--               var10.addSuppressed(var9);
--            }
--
--            throw var10;
-          }
- 
--         scanner.close();
-          return null;
-       } finally {
-          ;
-@@ -74,11 +36,11 @@
+@@ -36,11 +36,11 @@
     }
  
     public Scanner testFinallyNested(File param1) {
@@ -10868,430 +9733,79 @@ gen_diffs.py pkg/TestTryWithResourcesReturnJ16.java 1.8.0 1.10.0-20221220.042610
        //
        // Bytecode:
        // 00: new java/util/Scanner
-@@ -134,193 +96,55 @@
-    }
- 
-    public String testComplex(File f, File f2, File f3) throws FileNotFoundException {
--      Scanner scanner = this.create(f);
-+      Object var16;
-+      try (
-+         Scanner scanner = this.create(f);
-+         Scanner s2 = this.create(f2);
-+      ) {
-+         scanner.next();
-+         if (scanner.hasNext() && s2.hasNext()) {
-+            try (Scanner s = this.create(f3)) {
-+               scanner.next();
- 
--      String o;
--      label104: {
--         Object var16;
--         try {
--            Scanner s2 = this.create(f2);
--
--            label106: {
--               try {
--                  scanner.next();
--                  if (!scanner.hasNext() || !s2.hasNext()) {
--                     var16 = null;
--                     break label106;
--                  }
--
--                  Scanner s = this.create(f3);
--
--                  try {
--                     scanner.next();
--
--                     for(int i = 0; i < s.nextInt(); ++i) {
--                        System.out.println(i);
--                     }
--
--                     o = s.next();
--                  } catch (Throwable var13) {
--                     if (s != null) {
--                        try {
--                           s.close();
--                        } catch (Throwable var12) {
--                           var13.addSuppressed(var12);
--                        }
--                     }
--
--                     throw var13;
--                  }
--
--                  if (s != null) {
--                     s.close();
--                  }
--               } catch (Throwable var14) {
--                  if (s2 != null) {
--                     try {
--                        s2.close();
--                     } catch (Throwable var11) {
--                        var14.addSuppressed(var11);
--                     }
--                  }
--
--                  throw var14;
-+               for(int i = 0; i < s.nextInt(); ++i) {
-+                  System.out.println(i);
-                }
- 
--               if (s2 != null) {
--                  s2.close();
--               }
--               break label104;
-+               return s.next();
-             }
--
--            if (s2 != null) {
--               s2.close();
--            }
--         } catch (Throwable var15) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var10) {
--                  var15.addSuppressed(var10);
--               }
--            }
--
--            throw var15;
-          }
- 
--         if (scanner != null) {
--            scanner.close();
--         }
--
--         return (String)var16;
-+         var16 = null;
-       }
- 
--      if (scanner != null) {
--         scanner.close();
--      }
--
--      return o;
-+      return (String)var16;
-    }
- 
-    public String testComplex1(File f, File f2, File f3) throws FileNotFoundException {
--      Scanner scanner = this.create(f);
--
--      String var6;
--      label74: {
--         try {
--            Scanner s2 = this.create(f2);
--
--            label76: {
--               try {
--                  if (!scanner.hasNext() || !s2.hasNext()) {
--                     s2.next();
--                     break label76;
--                  }
--
--                  var6 = scanner.next();
--               } catch (Throwable var10) {
--                  if (s2 != null) {
--                     try {
--                        s2.close();
--                     } catch (Throwable var9) {
--                        var10.addSuppressed(var9);
--                     }
--                  }
--
--                  throw var10;
--               }
--
--               if (s2 != null) {
--                  s2.close();
--               }
--               break label74;
--            }
--
--            if (s2 != null) {
--               s2.close();
--            }
--         } catch (Throwable var11) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var8) {
--                  var11.addSuppressed(var8);
--               }
--            }
--
--            throw var11;
-+      try (
-+         Scanner scanner = this.create(f);
-+         Scanner s2 = this.create(f2);
-+      ) {
-+         if (scanner.hasNext() && s2.hasNext()) {
-+            return scanner.next();
-          }
- 
--         if (scanner != null) {
--            scanner.close();
--         }
--
--         return null;
-+         s2.next();
-       }
- 
--      if (scanner != null) {
--         scanner.close();
--      }
--
--      return var6;
-+      return null;
-    }
- 
-    public String testComplex2(File f, File f2, File f3) throws FileNotFoundException {
--      Scanner scanner = this.create(f);
--
--      String var5;
--      label43: {
--         try {
--            if (scanner.hasNext()) {
--               var5 = scanner.next();
--               break label43;
--            }
--
--            scanner.next();
--         } catch (Throwable var8) {
--            if (scanner != null) {
--               try {
--                  scanner.close();
--               } catch (Throwable var7) {
--                  var8.addSuppressed(var7);
--               }
--            }
--
--            throw var8;
-+      try (Scanner scanner = this.create(f)) {
-+         if (scanner.hasNext()) {
-+            return scanner.next();
-          }
- 
--         if (scanner != null) {
--            scanner.close();
--         }
--
--         return null;
-+         scanner.next();
-       }
- 
--      if (scanner != null) {
--         scanner.close();
--      }
--
--      return var5;
-+      return null;
-    }
- 
-    private Scanner create(File file) throws FileNotFoundException {
 gen_diffs.py pkg/TestTryWithResourcesSwitchJ16.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -6,9 +6,7 @@
- 
- public class TestTryWithResourcesSwitchJ16 {
-    public void test(File f) throws FileNotFoundException {
--      Scanner s = this.create(f);
--
--      try {
-+      try (Scanner s = this.create(f)) {
-          switch(s.nextInt()) {
-             case 1:
-                System.out.println("1");
-@@ -19,65 +17,51 @@
-             default:
+@@ -18,19 +18,18 @@
                 System.out.println("default");
           }
--      } catch (Throwable var6) {
--         if (s != null) {
--            try {
--               s.close();
--            } catch (Throwable var5) {
--               var6.addSuppressed(var5);
--            }
--         }
--
--         throw var6;
        }
--
--      if (s != null) {
--         s.close();
--      }
 -
     }
  
     public void test1(File f) throws FileNotFoundException {
--      Scanner s = this.create(f);
--
--      label45: {
--         label44: {
--            try {
--               label51: {
--                  switch(s.nextInt()) {
--                     case 1:
--                        System.out.println("1");
--                        break;
--                     case 2:
--                        System.out.println("2");
--                        break label51;
--                     default:
--                        System.out.println("default");
--                  }
--
--                  System.out.println("after switch");
--                  break label44;
--               }
--            } catch (Throwable var6) {
--               if (s != null) {
--                  try {
--                     s.close();
--                  } catch (Throwable var5) {
--                     var6.addSuppressed(var5);
--                  }
--               }
--
--               throw var6;
-+      try (Scanner s = this.create(f)) {
+       try (Scanner s = this.create(f)) {
+-         label56: {
 +         label54: {
-+            switch(s.nextInt()) {
-+               case 1:
-+                  System.out.println("1");
-+                  break;
-+               case 2:
-+                  System.out.println("2");
+             switch(s.nextInt()) {
+                case 1:
+                   System.out.println("1");
+                   break;
+                case 2:
+                   System.out.println("2");
+-                  break label56;
 +                  break label54;
-+               default:
-+                  System.out.println("default");
+                default:
+                   System.out.println("default");
              }
- 
--            if (s != null) {
--               s.close();
-+            System.out.println("after switch");
-+         }
-+      }
-+
-+      System.out.println("after");
-+      if (f.exists()) {
-+         System.out.println("exists");
-+      }
-+   }
-+
-+   public int test2(File f) throws FileNotFoundException {
-+      try (Scanner s = this.create(f)) {
-+         label66: {
-+            switch(s.nextInt()) {
-+               case 1:
-+                  System.out.println("1");
-+                  break;
-+               case 2:
-+                  System.out.println("2");
-+                  break label66;
-+               case 3:
-+                  System.out.println("3");
-+                  return 1;
-+               default:
-+                  System.out.println("default");
-             }
--            break label45;
--         }
- 
--         if (s != null) {
--            s.close();
-+            System.out.println("after switch");
-          }
-       }
- 
-@@ -86,71 +70,7 @@
+@@ -43,19 +42,18 @@
+       if (f.exists()) {
           System.out.println("exists");
        }
- 
--   }
 -
--   public int test2(File f) throws FileNotFoundException {
--      Scanner s = this.create(f);
--
--      byte var3;
--      label59: {
--         label54: {
--            label53: {
--               try {
--                  label62: {
--                     switch(s.nextInt()) {
--                        case 1:
--                           System.out.println("1");
--                           break;
--                        case 2:
--                           System.out.println("2");
--                           break label62;
--                        case 3:
--                           System.out.println("3");
--                           var3 = 1;
--                           break label59;
--                        default:
--                           System.out.println("default");
--                     }
--
--                     System.out.println("after switch");
--                     break label53;
--                  }
--               } catch (Throwable var6) {
--                  if (s != null) {
--                     try {
--                        s.close();
--                     } catch (Throwable var5) {
--                        var6.addSuppressed(var5);
--                     }
--                  }
--
--                  throw var6;
--               }
--
--               if (s != null) {
--                  s.close();
--               }
--               break label54;
--            }
--
--            if (s != null) {
--               s.close();
--            }
--         }
--
--         System.out.println("after");
--         if (f.exists()) {
--            System.out.println("exists");
--         }
--
--         return 0;
--      }
--
--      if (s != null) {
--         s.close();
--      }
--
--      return var3;
-+      return 0;
     }
  
-    private Scanner create(File file) throws FileNotFoundException {
+    public int test2(File f) throws FileNotFoundException {
+       try (Scanner s = this.create(f)) {
+-         label69: {
++         label66: {
+             switch(s.nextInt()) {
+                case 1:
+                   System.out.println("1");
+                   break;
+                case 2:
+                   System.out.println("2");
+-                  break label69;
++                  break label66;
+                case 3:
+                   System.out.println("3");
+                   return 1;
 gen_diffs.py pkg/TestUnionType.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -1,10 +1,9 @@
- package pkg;
+@@ -8,7 +8,7 @@
+       return (c1, c2) -> 1;
+    }
  
--import java.io.Serializable;
- import java.util.Comparator;
+-   // $FF: synthetic method
++   // $QF: synthetic method
+    private static Object $deserializeLambda$(SerializedLambda lambda) {
+       String var1 = lambda.getImplMethodName();
+       byte var2 = -1;
+gen_diffs.py pkg/TestUnionTypeAssign.java 1.8.0 1.10.0-20221220.042610-29
+--- 1.8.0
++++ 1.10.0-20221220.042610-29
+@@ -20,10 +20,10 @@
+    }
  
- public interface TestUnionType {
-    static Comparator comparingInt() {
--      return (Comparator)((Serializable)((c1, c2) -> 1));
-+      return (c1, c2) -> 1;
+    default <E extends Enum<E> & TestUnionTypeAssign> void test4(Supplier<Enum[]> supplier) {
+-      E[] array = supplier.get();
++      E[] array = (Enum[])supplier.get();
+    }
+ 
+    default <E extends Enum<E> & TestUnionTypeAssign> void test5(Supplier<TestUnionTypeAssign[]> supplier) {
+-      E[] array = supplier.get();
++      E[] array = (Enum[])supplier.get();
     }
  }
 \ No newline at end of file
@@ -11309,7 +9823,7 @@ gen_diffs.py pkg/TestUnknownCast.java 1.8.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestUnknownCastJ17.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
-@@ -2,53 +2,20 @@
+@@ -2,41 +2,20 @@
  
  import java.lang.annotation.ElementType;
  import java.util.Objects;
@@ -11321,56 +9835,44 @@ gen_diffs.py pkg/TestUnknownCastJ17.java 1.8.0 1.10.0-20221220.042610-29
     public void test() {
        ElementType vvv1 = ElementType.METHOD;
        synchronized(this) {
--         int var19;
--         label108: {
+-         label110: {
 +         label92: {
              System.out.println(vvv1);
 -            Object var10000 = new Object();
 -            Objects.requireNonNull(var10000);
 -            Object vvv5 = var10000;
--            byte vvv6 = 0;
+-            int vvv6 = 0;
 +            Object var23;
 +            Objects.requireNonNull(var23);
 +            Object vvv5 = var23;
  
 -            switch(vvv5) {
 -               default -> {
--                  ElementType var5 = ElementType.METHOD;
+-                  label111: {
+-                     ElementType var5 = ElementType.METHOD;
 -
--                  try {
--                     Scanner vvv3 = new Scanner(System.in);
--
--                     try {
+-                     try (Scanner vvv3 = new Scanner(System.in)) {
 -                        String var21 = "Hi!";
--                     } catch (Throwable var15) {
--                        try {
--                           vvv3.close();
--                        } catch (Throwable var13) {
--                           var15.addSuppressed(var13);
--                        }
--
--                        throw var15;
+-                     } finally {
+-                        System.out.println(vvv1);
 -                     }
 -
--                     vvv3.close();
--                  } finally {
--                     System.out.println(vvv1);
--                  }
+-                     int var19 = 140;
 -
--                  var19 = 140;
+-                     while(--var19 <= 395) {
+-                        vvv6 = -91;
+-                        System.out.println(vvv1);
+-                        var19 -= 6;
+-                     }
+-                     break label111;
+-                  }
 -               }
 -            };
--         }
--
--         while(--var19 <= 395) {
--            int vvv6 = -91;
--            System.out.println(vvv1);
--            var19 -= 6;
 +            <unknown> var10000_1 = (<unknown>)(new Object());
           }
        }
  
-@@ -61,28 +28,23 @@
+@@ -49,28 +28,23 @@
     public void test2() {
        ElementType vvv1 = ElementType.METHOD;
        synchronized(this) {
@@ -11412,36 +9914,6 @@ gen_diffs.py pkg/TestUnknownCastJ17.java 1.8.0 1.10.0-20221220.042610-29
           }
        }
  
-gen_diffs.py pkg/TestVarArgCalls.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -17,10 +17,10 @@
-    }
- 
-    public void printAll(String fmt, String... params) {
--      System.out.println(String.format(fmt, (Object[])params));
-+      System.out.println(String.format(fmt, params));
-    }
- 
-    public void printComplex(String fmt, String[]... params) {
--      System.out.println(String.format(fmt, (Object[])params));
-+      System.out.println(String.format(fmt, params));
-    }
- }
-\ No newline at end of file
-gen_diffs.py pkg/TestVarHandles.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -15,7 +15,7 @@
-    public void test2() {
-       String[] arr = new String[]{"a"};
-       VarHandle elementHandle = MethodHandles.arrayElementVarHandle(String[].class);
--      boolean success = elementHandle.compareAndSet(arr, 0, "a", "b");
-+      boolean success = elementHandle.compareAndSet((String[])arr, (int)0, (String)"a", (String)"b");
-       System.out.println(success);
-    }
- }
-\ No newline at end of file
 gen_diffs.py pkg/TestVarIndex.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29
@@ -11550,18 +10022,6 @@ gen_diffs.py pkg/TestWhileConditionTernary.java 1.8.0 1.10.0-20221220.042610-29
     }
  
     public boolean blackBox() {
-gen_diffs.py pkg/TestWhileForeach.java 1.8.0 1.10.0-20221220.042610-29
---- 1.8.0
-+++ 1.10.0-20221220.042610-29
-@@ -5,7 +5,7 @@
- import java.util.List;
- 
- public class TestWhileForeach {
--   private final List<Object> objects = new ArrayList();
-+   private final List<Object> objects = new ArrayList<>();
- 
-    public Object test() {
-       Iterator<Object> it = itr();
 gen_diffs.py pkg/TestWhileTernary1.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
 +++ 1.10.0-20221220.042610-29

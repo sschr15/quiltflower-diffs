@@ -23,12 +23,13 @@ def main():
     if not os.path.exists(work_dir):
         print('No decompilation found, please run main.py first, then run clean_decomp.py for a cleaner diff')
         return
-    
+
+    dirs = [i for i in glob(f'{work_dir}{fs}*') if os.path.isdir(i)]
+
     if natsorted:
-        dirs = natsorted(glob(f'{work_dir}{fs}*'))
+        dirs = natsorted(dirs)
         latest = dirs[-1].split(fs)[-1]
     else:
-        dirs = glob(f'{work_dir}{fs}*')
         semvers: dict[SemVer, str] = {}
         for d in dirs:
             try:

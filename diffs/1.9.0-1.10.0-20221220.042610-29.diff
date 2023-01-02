@@ -87,7 +87,7 @@ gen_diffs.py pkg/TestFinallyThrow.java 1.9.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestGroovyClass.java 1.9.0 1.10.0-20221220.042610-29
 --- 1.9.0
 +++ 1.10.0-20221220.042610-29
-@@ -37,9 +37,8 @@
+@@ -91,9 +91,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {
@@ -98,7 +98,7 @@ gen_diffs.py pkg/TestGroovyClass.java 1.9.0 1.10.0-20221220.042610-29
        } else {
           this.metaClass = this.$getStaticMetaClass();
           return this.metaClass;
-@@ -85,9 +84,8 @@
+@@ -231,9 +230,8 @@
        @Internal
        @Transient
        public MetaClass getMetaClass() {
@@ -109,7 +109,7 @@ gen_diffs.py pkg/TestGroovyClass.java 1.9.0 1.10.0-20221220.042610-29
           } else {
              this.metaClass = this.$getStaticMetaClass();
              return this.metaClass;
-@@ -114,9 +112,8 @@
+@@ -354,9 +352,8 @@
        @Internal
        @Transient
        public MetaClass getMetaClass() {
@@ -123,7 +123,7 @@ gen_diffs.py pkg/TestGroovyClass.java 1.9.0 1.10.0-20221220.042610-29
 gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.9.0 1.10.0-20221220.042610-29
 --- 1.9.0
 +++ 1.10.0-20221220.042610-29
-@@ -38,9 +38,8 @@
+@@ -135,9 +135,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {
@@ -137,7 +137,7 @@ gen_diffs.py pkg/TestGroovyTrait$Trait$Helper.java 1.9.0 1.10.0-20221220.042610-
 gen_diffs.py pkg/TestGroovyTryCatch.java 1.9.0 1.10.0-20221220.042610-29
 --- 1.9.0
 +++ 1.10.0-20221220.042610-29
-@@ -50,9 +50,8 @@
+@@ -77,9 +77,8 @@
     @Internal
     @Transient
     public MetaClass getMetaClass() {

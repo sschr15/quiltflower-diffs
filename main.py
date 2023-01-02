@@ -1,22 +1,31 @@
 from glob import glob
 from requests import get
+from xml.etree import ElementTree
 import os
 import sys
+import subprocess
+import time
 
-VERSIONS = [
-    '1.4.0',
-    '1.5.0',
-    '1.6.1',
-    '1.7.0',
-    '1.8.0',
-    '1.8.1',
-    '1.9.0',
-    '1.10.0-SNAPSHOT',
-]
+def get_releases() -> list[str]:
+    releases: list[str] = []
+    xml = get('https://maven.quiltmc.org/repository/release/org/quiltmc/quiltflower/maven-metadata.xml').text
+    root = ElementTree.fromstring(xml)
+    versions = root.findall('versioning/versions/version')
+    for version in versions:
+        releases.append(version.text)
+    return releases
+
+def get_latest_snapshot() -> str:
+    xml = get('https://maven.quiltmc.org/repository/snapshot/org/quiltmc/quiltflower/maven-metadata.xml').text
+    root = ElementTree.fromstring(xml)
+    return root.find('versioning/latest').text
 
 def download_version(version: str):
     if os.path.exists(f'jars/quiltflower-{version}.jar'):
         return
+
+    os.makedirs('jars', exist_ok=True)
+
     if version.endswith('-SNAPSHOT'):
         repo = 'snapshot'
     else:
@@ -25,9 +34,9 @@ def download_version(version: str):
     if repo == 'snapshot':
         print(f"WARN: Snapshot versions are always re-downloaded, even if they already exist locally. Re-downloading {version}")
         # get metadata to get the latest build
-        metadata = get(url + 'maven-metadata.xml').text
-        snapshot_version = metadata.split('<snapshotVersion>')[1].split('</snapshotVersion>')[0]
-        version = snapshot_version.split('<value>')[1].split('</value>')[0]
+        xml = get(url + 'maven-metadata.xml').text
+        root = ElementTree.fromstring(xml)
+        version = root.find('versioning/snapshotVersions/snapshotVersion/value').text
     
     url += f'quiltflower-{version}.jar'
     print(f'Downloading {url}')
@@ -40,11 +49,17 @@ def download_version(version: str):
 def main(flags: list[str]):
     os.makedirs('jars', exist_ok=True)
     os.makedirs('decomp', exist_ok=True)
+    os.makedirs('logs', exist_ok=True)
 
     fs = os.path.sep
 
-    for version in VERSIONS:
+    versions = get_releases()
+    versions.append(get_latest_snapshot())
+
+    for version in versions:
         download_version(version)
+    
+    failures = {}
 
     for file in glob('jars/quiltflower-*.jar'):
         version = file.split("quiltflower-")[1].split(".jar")[0]
@@ -52,11 +67,59 @@ def main(flags: list[str]):
                   ' '.join(flags) + \
                   f' test-cases.jar decomp{fs}{version}'
 
-        print(f'Running "{command}"')
-        os.system(command)
+        print(f'Running {command!r}')
+        with open(f'logs{fs}{version}.log', 'w') as log:
+            with subprocess.Popen(command, stdout=log, stderr=log) as proc:
+                start_time = time.time()
+                while proc.poll() is None:
+                    time.sleep(1)
+                    if time.time() - start_time > 60:
+                        print(f'Timed out decompiling {version}')
+                        proc.kill()
+                        failures[version] = 'timeout'
+                        no_continue = False  # pain
+                        break
+                else:
+                    no_continue = True
+                    exit_code = proc.returncode
+                
+        if not no_continue:
+            continue
+
+        if exit_code != 0:
+            print(f'Failed to decompile using QF {version} with exit code {exit_code}')
+            failures[version] = exit_code
+
+    if len(failures) > 0:
+        print(f'Failed to decompile {len(failures)} versions:')
+        for version, exit_code in failures.items():
+            print(f'{version} with exit code {exit_code}')
 
 if __name__ == '__main__':
     if (len(sys.argv) < 2):
-        main([])
+        try:
+            from qf_prefs import IFernflowerPreferences
+        except ImportError:
+            print('qf_prefs.py not found, trying to generate via GenQfPreferences.java')
+            # Ensure a QF jar is downloaded
+            download_version(get_releases()[-1])
+            os.system('javac GenQfPreferences.java')
+            os.system('java GenQfPreferences')
+            try:
+                from qf_prefs import IFernflowerPreferences
+            except ImportError:
+                print('Failed to generate qf_prefs.py, please run GenQfPreferences.java manually')
+                exit(1)
+
+        default_preferences: dict[str, bool | str | int] = {
+            IFernflowerPreferences.INCLUDE_ENTIRE_CLASSPATH: True,
+            IFernflowerPreferences.DECOMPILE_GENERIC_SIGNATURES: True,
+            IFernflowerPreferences.REMOVE_SYNTHETIC: False,
+            IFernflowerPreferences.LOG_LEVEL: 'WARN',
+        }
+
+        prefs = [f'-{k}={v if not isinstance(v, bool) else ("1" if v else "0")}' for k, v in default_preferences.items()]
+
+        main(prefs)
     else:
         main(sys.argv[1:])
