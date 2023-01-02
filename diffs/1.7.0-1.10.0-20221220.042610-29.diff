@@ -8714,7 +8714,7 @@ gen_diffs.py pkg/TestRecursiveLambda.java 1.7.0 1.10.0-20221220.042610-29
  //  at org.jetbrains.java.decompiler.main.rels.LambdaProcessor.processClass(LambdaProcessor.java)
  //  at org.jetbrains.java.decompiler.main.ClassesProcessor.writeClass(ClassesProcessor.java)
  //  at org.jetbrains.java.decompiler.main.Fernflower.getClassContent(Fernflower.java)
--//   at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$0(ContextUnit.java:170)+//   at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$2(ContextUnit.java:145)
+-//  at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$0(ContextUnit.java)+//  at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$2(ContextUnit.java)
 \ No newline at end of file
 gen_diffs.py pkg/TestRenameEntities.java 1.7.0 1.10.0-20221220.042610-29
 --- 1.7.0
@@ -12675,7 +12675,7 @@ gen_diffs.py pkg/TestTryReturn.java 1.7.0 1.10.0-20221220.042610-29
 -      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "org.jetbrains.java.decompiler.util.FastFixedSetFactory$FastFixedSet.contains(Object)" because "predset" is null
--      //   at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.lambda$removeErroneousNodes$0(FastExtendedPostdominanceHelper.java:168)
+-      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.lambda$removeErroneousNodes$0(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.iterateReachability(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.removeErroneousNodes(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.getExtendedPostdominators(FastExtendedPostdominanceHelper.java)

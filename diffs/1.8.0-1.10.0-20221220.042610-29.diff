@@ -4828,7 +4828,7 @@ gen_diffs.py pkg/TestRecordPattern1.java 1.8.0 1.10.0-20221220.042610-29
 -      //  at org.jetbrains.java.decompiler.struct.gen.VarType.getCommonSupertype(VarType.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.exps.SwitchHeadExprent.checkExprTypeBounds(SwitchHeadExprent.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.checkTypeExprent(VarTypeProcessor.java)
--      //   at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java:107)
+-      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.sforms.DirectGraph.iterateExprents(DirectGraph.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.processVarTypes(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.calculateVarTypes(VarTypeProcessor.java)
@@ -4947,7 +4947,7 @@ gen_diffs.py pkg/TestRecordPattern2.java 1.8.0 1.10.0-20221220.042610-29
 -      //  at org.jetbrains.java.decompiler.struct.gen.VarType.getCommonSupertype(VarType.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.exps.SwitchHeadExprent.checkExprTypeBounds(SwitchHeadExprent.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.checkTypeExprent(VarTypeProcessor.java)
--      //   at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java:107)
+-      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.sforms.DirectGraph.iterateExprents(DirectGraph.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.processVarTypes(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.calculateVarTypes(VarTypeProcessor.java)
@@ -5237,7 +5237,7 @@ gen_diffs.py pkg/TestRecursiveLambda.java 1.8.0 1.10.0-20221220.042610-29
  //  at org.jetbrains.java.decompiler.main.rels.LambdaProcessor.processClass(LambdaProcessor.java)
  //  at org.jetbrains.java.decompiler.main.ClassesProcessor.writeClass(ClassesProcessor.java)
  //  at org.jetbrains.java.decompiler.main.Fernflower.getClassContent(Fernflower.java)
--//   at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$0(ContextUnit.java:169)+//   at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$2(ContextUnit.java:145)
+-//  at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$0(ContextUnit.java)+//  at org.jetbrains.java.decompiler.struct.ContextUnit.lambda$save$2(ContextUnit.java)
 \ No newline at end of file
 gen_diffs.py pkg/TestRunSuspend.java 1.8.0 1.10.0-20221220.042610-29
 --- 1.8.0
@@ -6005,7 +6005,7 @@ gen_diffs.py pkg/TestSwitchPatternMatching17.java 1.8.0 1.10.0-20221220.042610-2
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.changeVarExprentType(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.changeExprentType(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.checkTypeExprent(VarTypeProcessor.java)
--      //   at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java:107)
+-      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.lambda$processVarTypes$1(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.sforms.DirectGraph.iterateExprents(DirectGraph.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.processVarTypes(VarTypeProcessor.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.vars.VarTypeProcessor.calculateVarTypes(VarTypeProcessor.java)
@@ -8028,7 +8028,7 @@ gen_diffs.py pkg/TestTryReturn.java 1.8.0 1.10.0-20221220.042610-29
 -      // $QF: Couldn't be decompiled
 -      // Please report this to the Quiltflower issue tracker, at https://github.com/QuiltMC/quiltflower/issues with a copy of the class file (if you have the rights to distribute it!)
 -      // java.lang.NullPointerException: Cannot invoke "org.jetbrains.java.decompiler.util.FastFixedSetFactory$FastFixedSet.contains(Object)" because "predset" is null
--      //   at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.lambda$removeErroneousNodes$0(FastExtendedPostdominanceHelper.java:168)
+-      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.lambda$removeErroneousNodes$0(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.iterateReachability(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.removeErroneousNodes(FastExtendedPostdominanceHelper.java)
 -      //  at org.jetbrains.java.decompiler.modules.decompiler.decompose.FastExtendedPostdominanceHelper.getExtendedPostdominators(FastExtendedPostdominanceHelper.java)

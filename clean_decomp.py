@@ -29,7 +29,7 @@ def as_stacktrace_line(line: str) -> Optional[StacktraceLine]:
     """
     Returns a StacktraceLine object if the line is a stacktrace line, otherwise None.
     """
-    regex = r'^at\s+(?P<class_plus_package>[\w\.]+)\.(?P<method>(\w+|<(cl)?init>))\(((?P<file>[\w\.]+):(?P<line>\d+)?|(?P<native>Native Method))\)$'
+    regex = r'^at\s+(?P<class_plus_package>[\w\.$]+)\.(?P<method>([\w$]+|<(cl)?init>))\(((?P<file>[\w\.$]+):(?P<line>\d+)?|(?P<native>Native Method))\)$'
     line = line.strip()
     match = re.match(regex, line)
     if match:
