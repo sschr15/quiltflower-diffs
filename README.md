@@ -52,6 +52,12 @@ to extract the jarfile, conflicts arise.
 
 This issue is fixed in future versions.
 
+### Wait, but the decompilaion step says it timed out?
+
+Yes, it does. QF 1.6 ends up getting hung on something with the default QF settings. So does QF 1.7. QF *does* fully decompile in both,
+but it gets hung on something that never finishes. To not waste time (and since there aren't that many test cases), the script just
+times out after one fast minute.
+
 ## Why is the latest snapshot version always re-downloaded?
 
 To ensure that we're for sure using the latest snapshot version, we always re-download it. This is because the way that a version is picked
@@ -63,3 +69,19 @@ does not search the file tree to identify whatever snapshot has already been dow
 `natsort` is a Python library that allows for natural sorting of strings. This is useful in this scenario, because according to traditional
 alphanumeric sorting, `1.9.0` comes after `1.10.0`. However, this is not the case for Quiltflower versions (or any semantic versioning system,
 for that matter). `natsort` allows for "natural" (or "human") sorting, which also works quite well for semantic versioning.
+
+## Why is &lt;x&gt; version failing?
+
+Quiltflower is not perfect. No Java decompiler is. QF just happens to be *really* good at decompiling Java code, especially in the most recent
+versions. However, it still has its issues. Some of these issues are due to the test cases themselves, and some are due to Quiltflower itself.
+For example, there are a couple of test cases that intentionally fail, such as `TestRecursiveLambda` or `TestTryReturn`'s `testParsingFailure`.
+These are in large part meant to catch erroneous bugs that wouldn't show up in normal code and could instead cause QF to throw up in more
+severe manners instead of a simple illegal state or parsing exception. These should never happen in reasonably written code.
+
+These scripts aren't perfect either. By the time you're reading this, my [improved options PR](https://github.com/QuiltMC/quiltflower/pull/235)
+may have been merged, which completely changes the way that options are handled. If this is the case, then manually running `GenQfPreferences.java`
+should be enough to generate a new `qf_prefs.py` file, assuming that version 1.9 or earlier exists in the `jars` directory.
+
+Future versions may also decompile some of the test cases in rather unexpected ways. For example, the tests contain a plethora of classes which
+are actually compiled versions of Kotlin code. QF's future plugin system allows for Kotlin decompilation (to some extent), so these classes may
+create rather large diffs.
